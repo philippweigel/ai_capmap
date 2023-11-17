@@ -5,6 +5,11 @@ import PyPDF2
 from docx import Document
 from datetime import datetime
 from openai import OpenAI
+import pytesseract
+from PIL import Image
+import io
+from pdf2image import convert_from_path
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
@@ -27,11 +32,20 @@ def allowed_file(filename):
 
 def extract_text_from_pdf(pdf_path):
     with open(pdf_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        text = ""
-        for page in reader.pages:
-            text += page.extract_text()
-        return text
+        # Konvertieren des PDFs in eine Liste von Bildern
+        images = convert_from_path(pdf_path)
+
+        # Extrahieren von Text aus jedem Bild
+        extracted_texts = []
+        for image in images:
+            text = pytesseract.image_to_string(image)
+            extracted_texts.append(text)
+
+        # Löschen der temporären PDF-Datei
+        #os.remove(pdf_path)
+
+        # Rückgabe des zusammengesetzten Textes
+        return ' '.join(extracted_texts)
 
 def extract_text_from_docx(docx_path):
     doc = Document(docx_path)

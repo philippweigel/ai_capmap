@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Upload Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <title>Document Upload and Capability Map Creation</title>
   </head>
   <body>
-    <h1>Upload Document for Capability Map Creation</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="document" />
-      <input type="submit" value="Upload" />
-    </form>
-
-    <button id="analyze-btn">Analyze Text Files</button>
-
-    <script type="text/javascript">
-      document.getElementById("analyze-btn").onclick = function () {
-        fetch("/analyze")
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data); // Do something with the response
-          });
-      };
-    </script>
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>Document Analysis</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#" role="button">Contact</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <h2>Upload Your Documents</h2>
+            <h3>Instantly Generate a Capability Map</h3>
+          </hgroup>
+          <p>
+            Upload your PDF documents to automatically generate a capability
+            map. Our system analyzes the text and constructs a visual
+            representation of the capabilities or themes within the documents.
+          </p>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <input
+              type="file"
+              id="document"
+              name="document"
+              accept=".pdf"
+              multiple
+              required
+            />
+            <button type="submit">Upload and Analyze</button>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer class="container">
+      <small
+        ><a href="#">Privacy Policy</a> •
+        <a href="#">Terms of Service</a></small
+      >
+    </footer>
   </body>
 </html>
