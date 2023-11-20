@@ -1,23 +1,22 @@
 from flask import Flask, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 import os
-import PyPDF2
 from docx import Document
 from datetime import datetime
-from openai import OpenAI
 # Import the document processing module
 import utils
 from dotenv import load_dotenv
 import config
 import openai
 from OpenAIHandlerClass import OpenAIHandler
+from config import (UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER,
+                    ALLOWED_EXTENSIONS, CAPABILITY_TEXT_FOLDER)
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Configuration from environment variables
 UPLOAD_FOLDER = config.UPLOAD_FOLDER
-CLEANED_TEXT_FOLDER = config.CLEANED_TEXT_FOLDER
 EXTRACTED_TEXT_FOLDER = config.EXTRACTED_TEXT_FOLDER
 ALLOWED_EXTENSIONS = config.ALLOWED_EXTENSIONS
 CAPABILITY_TEXT_FOLDER = config.CAPABILITY_TEXT_FOLDER
@@ -28,14 +27,9 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 
 
-# Stellen Sie sicher, dass der Upload-Ordner existiert
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
-if not os.path.exists(EXTRACTED_TEXT_FOLDER):
-    os.makedirs(EXTRACTED_TEXT_FOLDER)
-
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# Ensure necessary directories exist
+for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER]:
+    os.makedirs(folder, exist_ok=True)
 
 
 @app.route('/')
@@ -55,7 +49,7 @@ def upload_file():
         # Secure the filename and append the timestamp before the file extension
         filename_base, filename_ext = os.path.splitext(secure_filename(file.filename))
         filename = f"{filename_base}_{timestamp}{filename_ext}"
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(file_path)
 
         # Extrahieren Sie den Text aus der Datei basierend auf dem Dateityp
@@ -71,20 +65,11 @@ def upload_file():
         txt_filename = os.path.splitext(filename)[0] + '.txt'
         txt_path = os.path.join(EXTRACTED_TEXT_FOLDER, txt_filename)
         with open(txt_path, 'w', encoding='utf-8') as txt_file:
+            ##Whitespaces und NewLines werden entfernt
+            extracted_text = utils.clean_text(extracted_text)
+
             txt_file.write(extracted_text)
 
-
-         # Speichern Sie den gecleaned Text in einer .txt-Datei
-        txt_clean_filename = os.path.splitext(filename)[0] + '_clean.txt'
-        txt_clean_path = os.path.join(CLEANED_TEXT_FOLDER, txt_clean_filename)
-
-        # Remove newlines and whitespaces before handing to OpenAI
-        clean_text = utils.clean_text(extracted_text)
-        
-        #openai_handler = OpenAIHandler(clean_text)
-        #cleaned_text = openai_handler.clean_text()
-        with open(txt_clean_path, 'w', encoding='utf-8') as txt_file_clean:
-            txt_file_clean.write(clean_text)
 
         return jsonify({'message': 'File successfully uploaded'}), 200
     
@@ -93,7 +78,7 @@ def upload_file():
 def analyze_files():
 
     # Concatenate all texts from .txt files
-    combined_text = utils.read_and_concat_text_files(CLEANED_TEXT_FOLDER)
+    combined_text = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
 
     openai_handler = OpenAIHandler(combined_text)
 
