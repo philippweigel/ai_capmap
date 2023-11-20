@@ -41,7 +41,17 @@
               multiple
               required
             />
-            <button type="submit">Upload and Analyze</button>
+            <button type="submit">Upload</button>
+          </form>
+
+          <!-- Neues Formular für die Analyse -->
+          <form action="/analyze" method="post">
+            <button type="submit">Analyze</button>
+          </form>
+
+          <!-- Neues Formular für die Generierung der Maps -->
+          <form action="/generate" method="post">
+            <button type="submit">Generate</button>
           </form>
         </section>
       </div>

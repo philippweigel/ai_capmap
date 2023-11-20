@@ -5,16 +5,28 @@ import PyPDF2
 from docx import Document
 from datetime import datetime
 from openai import OpenAI
-import pytesseract
-from PIL import Image
-import io
-from pdf2image import convert_from_path
+# Import the document processing module
+import utils
+from dotenv import load_dotenv
+import config
+import openai
+from OpenAIHandlerClass import OpenAIHandler
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Configuration from environment variables
+UPLOAD_FOLDER = config.UPLOAD_FOLDER
+CLEANED_TEXT_FOLDER = config.CLEANED_TEXT_FOLDER
+EXTRACTED_TEXT_FOLDER = config.EXTRACTED_TEXT_FOLDER
+ALLOWED_EXTENSIONS = config.ALLOWED_EXTENSIONS
+CAPABILITY_TEXT_FOLDER = config.CAPABILITY_TEXT_FOLDER
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'uploads'
-EXTRACTED_TEXT_FOLDER = 'extracted_text'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx'}
+
 
 # Stellen Sie sicher, dass der Upload-Ordner existiert
 if not os.path.exists(UPLOAD_FOLDER):
@@ -25,32 +37,6 @@ if not os.path.exists(EXTRACTED_TEXT_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-def extract_text_from_pdf(pdf_path):
-    with open(pdf_path, 'rb') as file:
-        # Konvertieren des PDFs in eine Liste von Bildern
-        images = convert_from_path(pdf_path)
-
-        # Extrahieren von Text aus jedem Bild
-        extracted_texts = []
-        for image in images:
-            text = pytesseract.image_to_string(image)
-            extracted_texts.append(text)
-
-        # Löschen der temporären PDF-Datei
-        #os.remove(pdf_path)
-
-        # Rückgabe des zusammengesetzten Textes
-        return ' '.join(extracted_texts)
-
-def extract_text_from_docx(docx_path):
-    doc = Document(docx_path)
-    text = "\n".join([paragraph.text for paragraph in doc.paragraphs])
-    return text
 
 @app.route('/')
 def index():
@@ -63,7 +49,7 @@ def upload_file():
     file = request.files['document']
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
-    if file and allowed_file(file.filename):
+    if file and utils.allowed_file(file.filename, ALLOWED_EXTENSIONS):
         # Generate a timestamp format like '2023_01_01_12_00_00'
         timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
         # Secure the filename and append the timestamp before the file extension
@@ -75,9 +61,9 @@ def upload_file():
         # Extrahieren Sie den Text aus der Datei basierend auf dem Dateityp
         extracted_text = ""
         if filename.lower().endswith('.pdf'):
-            extracted_text = extract_text_from_pdf(file_path)
+            extracted_text = utils.extract_text_from_pdf(file_path)
         elif filename.lower().endswith('.docx'):
-            extracted_text = extract_text_from_docx(file_path)
+            extracted_text = utils.extract_text_from_docx(file_path)
         else:
             return jsonify({'error': 'File format not supported for text extraction'}), 400
 
@@ -87,47 +73,54 @@ def upload_file():
         with open(txt_path, 'w', encoding='utf-8') as txt_file:
             txt_file.write(extracted_text)
 
+
+         # Speichern Sie den gecleaned Text in einer .txt-Datei
+        txt_clean_filename = os.path.splitext(filename)[0] + '_clean.txt'
+        txt_clean_path = os.path.join(CLEANED_TEXT_FOLDER, txt_clean_filename)
+
+        # Remove newlines and whitespaces before handing to OpenAI
+        clean_text = utils.clean_text(extracted_text)
+        
+        #openai_handler = OpenAIHandler(clean_text)
+        #cleaned_text = openai_handler.clean_text()
+        with open(txt_clean_path, 'w', encoding='utf-8') as txt_file_clean:
+            txt_file_clean.write(clean_text)
+
         return jsonify({'message': 'File successfully uploaded'}), 200
     
 
 @app.route('/analyze', methods=['POST'])
 def analyze_files():
-    texts = []
-    files = os.listdir(EXTRACTED_TEXT_FOLDER)
 
     # Concatenate all texts from .txt files
-    for file_name in files:
-        if file_name.endswith('.txt'):
-            file_path = os.path.join(EXTRACTED_TEXT_FOLDER, file_name)
-            with open(file_path, 'r', encoding='utf-8') as file:
-                texts.append(file.read())
+    combined_text = utils.read_and_concat_text_files(CLEANED_TEXT_FOLDER)
 
-    # Combine all texts into a single string (if needed)
-    combined_text = " ".join(texts)
+    openai_handler = OpenAIHandler(combined_text)
 
-    # Here you would call the ChatGPT API
-    client = OpenAI(
-        api_key = os.environ.get("OPENAI_API_KEY")
-    )
+    capabilities = openai_handler.analyze_capabilities()
 
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
-        messages={
+    print(f"capabilities: {capabilities}")
 
-        },
-        response_format= "json_format"
-
-    )
-
-
-    if response.status_code == 200:
-        # Process the response and extract capabilities
-        capabilities = response.json()['choices'][0]['text']
-    else:
-        capabilities = "Error: Could not process the document."
-
-    # Return the capabilities in the response, or save them as needed
     return jsonify({'capabilities': capabilities})
+
+
+@app.route('/generate', methods=['POST'])
+def generate_capability_map():
+
+    # Concatenate all texts from .txt files
+    capabilities = utils.read_and_concat_text_files(CAPABILITY_TEXT_FOLDER)
+
+    openai_handler = OpenAIHandler(capabilities)
+
+    capability_map = openai_handler.generate_capability_map()
+
+    print(f"Here is the capability map: {capability_map}")
+
+    reformat_capability_map = openai_handler.reformat_capability_map()
+
+    #print(f"Here is the reformat_capability_map: {reformat_capability_map}")
+
+    return jsonify({'reformat_capability_map': reformat_capability_map})
 
 if __name__ == '__main__':
     app.run(debug=True)
