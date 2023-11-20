@@ -7,25 +7,14 @@ model = config.OPENAI_MODEL
 
 class OpenAIHandler:
 
-    def __init__(self, prompt):
-        self.prompt = prompt
+    def __init__(self, input):
+        self.input = input
 
-    def analyze_capabilities(self):
-        """Spezifische Funktion zur Analyse von Unternehmens-Capabilities."""
-        instructions = config.extract_capabilities_from_text_prompt
-        # Implementierung der spezifischen Analyse
-        response = self.send_prompt(instructions)
-        return response
-    
-    def clean_text(self):
-        instructions = config.clean_texts_from_pdf_prompt
-        response = self.send_prompt(instructions)
-        return response
+    def extract_capabilities_from_extracted_texts(self):
+        return self.send_prompt(config.extract_capabilities_from_texts_prompt)
     
     def generate_capability_map(self):
-        instructions = config.generate_capability_map_from_capabilities_prompt
-        response = self.send_prompt(instructions)
-        return response
+        return self.send_prompt(config.generate_capability_map_from_capabilities_prompt)
     
     def reformat_capability_map(self):
         instructions = config.reformat_capability_map_prompt
@@ -34,15 +23,14 @@ class OpenAIHandler:
     
 
     def send_prompt(self, instructions):
-        print(f"Instructions: {instructions}")
-        print(f"Prompt: {self.prompt}")
+        full_prompt = f"{instructions} {self.input}"
         try:
             response = openai.chat.completions.create(
             model=model,
             messages=[
                 {
                 "role": "system",
-                "content": f"{instructions} {self.prompt}"
+                "content": full_prompt
                 }
             ],
             temperature=1,
@@ -50,7 +38,6 @@ class OpenAIHandler:
             frequency_penalty=0,
             presence_penalty=0
             )
-            print(f"Choice from Open AI {response.choices[0].message.content}")
             return response.choices[0].message.content
         except Exception as e:
             print(f"Error communicating with OpenAI: {e}")

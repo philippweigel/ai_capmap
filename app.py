@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 import os
-from docx import Document
 from datetime import datetime
 # Import the document processing module
 import utils
@@ -28,7 +27,7 @@ app = Flask(__name__)
 
 
 # Ensure necessary directories exist
-for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER]:
+for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER, CAPABILITY_TEXT_FOLDER]:
     os.makedirs(folder, exist_ok=True)
 
 
@@ -67,7 +66,6 @@ def upload_file():
         with open(txt_path, 'w', encoding='utf-8') as txt_file:
             ##Whitespaces und NewLines werden entfernt
             extracted_text = utils.clean_text(extracted_text)
-
             txt_file.write(extracted_text)
 
 
@@ -78,14 +76,11 @@ def upload_file():
 def analyze_files():
 
     # Concatenate all texts from .txt files
-    combined_text = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
+    extracted_texts = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
+    openai_handler = OpenAIHandler(extracted_texts)
+    capabilities = openai_handler.extract_capabilities_from_extracted_texts()
 
-    openai_handler = OpenAIHandler(combined_text)
-
-    capabilities = openai_handler.analyze_capabilities()
-
-    print(f"capabilities: {capabilities}")
-
+    utils.save_as_json_file(capabilities, CAPABILITY_TEXT_FOLDER)
     return jsonify({'capabilities': capabilities})
 
 

@@ -1,9 +1,7 @@
-# document_processing.py
+import json
 import os
-import PyPDF2
 from docx import Document
 import pytesseract
-from PIL import Image
 from pdf2image import convert_from_path
 
 def allowed_file(filename, allowed_extensions):
@@ -46,6 +44,22 @@ def clean_text(text):
     cleaned_text = ' '.join(cleaned_text.split())
 
     return cleaned_text
+
+def save_as_json_file(data, file_path):
+    file_name = "capabilities.json"
+    file_path = file_path + file_name
+
+    print(file_path)
+    try:
+        # Check if data is a JSON string and parse it into a dictionary
+        if isinstance(data, str):
+            data = json.loads(data)
+
+        # Write the data to a file
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Error saving JSON file: {e}")
 
 
 
