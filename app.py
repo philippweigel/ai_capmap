@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, send_file
 from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
@@ -11,6 +11,8 @@ from OpenAIHandlerClass import OpenAIHandler
 from config import (UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER,
                     ALLOWED_EXTENSIONS, CAPABILITY_TEXT_FOLDER)
 
+from graph import save_graph
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -21,6 +23,8 @@ ALLOWED_EXTENSIONS = config.ALLOWED_EXTENSIONS
 CAPABILITY_TEXT_FOLDER = config.CAPABILITY_TEXT_FOLDER
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+
 
 
 app = Flask(__name__)
@@ -101,6 +105,22 @@ def generate_capability_map():
     #print(f"Here is the reformat_capability_map: {reformat_capability_map}")
 
     return jsonify({'reformat_capability_map': reformat_capability_map})
+
+
+@app.route('/download')
+def download_graph():
+    # Path to the JSON file
+    json_file_path = 'capabilities/data.json'
+    json_data = utils.read_json_from_file(json_file_path)
+
+    pdf_file_path = "static/file.pdf"
+
+    # Read and parse the JSON file
+    save_graph(json_data, pdf_file_path)
+
+    return send_file(pdf_file_path, as_attachment=True)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

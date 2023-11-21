@@ -46,7 +46,7 @@ def clean_text(text):
     return cleaned_text
 
 def save_as_json_file(data, file_path):
-    file_name = "capabilities.json"
+    file_name = "data.json"
     file_path = file_path + file_name
 
     print(file_path)
@@ -61,6 +61,11 @@ def save_as_json_file(data, file_path):
     except Exception as e:
         print(f"Error saving JSON file: {e}")
 
+
+# Function to read JSON from a file
+def read_json_from_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return json.load(file)
 
 
 
