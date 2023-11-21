@@ -32,23 +32,40 @@
             map. Our system analyzes the text and constructs a visual
             representation of the capabilities or themes within the documents.
           </p>
-          <form action="/upload" method="post" enctype="multipart/form-data">
-            <input
-              type="file"
-              id="document"
-              name="document"
-              accept=".pdf"
-              multiple
-              required
-            />
+          <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" id="document" name="document" accept=".pdf" multiple required />
             <button type="submit">Upload</button>
-          </form>
-
-          <!-- Neues Formular für die Generierung der Maps -->
-          <form action="/download">
-            <button type="submit">Download</button>
-          </form>
-        </section>
+        </form>
+        
+          <div id="loading" style="display: none;">Uploading and processing...</div>
+          <div id="downloadLink" style="display: none;">
+              File processed. <a href="/download">Click here to download.</a>
+          </div>
+          
+          <script>
+              document.getElementById('uploadForm').addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  var formData = new FormData(this);
+                  document.getElementById('loading').style.display = 'block';
+          
+                  fetch('/upload', {
+                      method: 'POST',
+                      body: formData
+                  }).then(response => response.json())
+                    .then(data => {
+                        document.getElementById('loading').style.display = 'none';
+                        if(data.message === 'File successfully uploaded') {
+                            document.getElementById('downloadLink').style.display = 'block';
+                        } else {
+                            alert('Error: ' + data.error);
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById('loading').style.display = 'none';
+                        alert('Error: ' + error);
+                    });
+              });
+          </script>
       </div>
     </main>
     <footer class="container">

@@ -1,0 +1,106 @@
+{
+    "capabilities": [
+        {
+            "name": "Urban Mobility Solutions",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Ridepooling",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Dynamic Pooling Algorithm",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Multimodal Integration",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Fleet Management",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Co-Creation Process",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Autonomous Ridepooling",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Stakeholder Partnerships",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Public Transport Collaboration",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Integration with Public Transport Tariffs",
+                            "level": "2"
+                        },
+                        {
+                            "name": "UITP Summit Partnership",
+                            "level": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Collaborative Research",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Long-term Urban Mobility Studies",
+                            "level": "2"
+                        },
+                        {
+                            "name": "ALIKE Project Participation",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Customer Experience",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Transparent Pricing",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Pre-booking Fare Estimation",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Infrastructure Development",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Barrierefreies Ridepooling",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Accessible Vehicles",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Inclusive Service Area Design",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -84,37 +84,6 @@ def upload_file():
         return jsonify({'message': 'File successfully uploaded'}), 200
     
 
-@app.route('/analyze', methods=['POST'])
-def analyze_files():
-
-    # Concatenate all texts from .txt files
-    extracted_texts = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
-    openai_handler = OpenAIHandler(extracted_texts)
-    capabilities = openai_handler.extract_capabilities_from_extracted_texts()
-
-    utils.save_as_json_file(capabilities, CAPABILITY_TEXT_FOLDER)
-    return jsonify({'capabilities': capabilities})
-
-
-# @app.route('/generate', methods=['POST'])
-# def generate_capability_map():
-
-#     # Concatenate all texts from .txt files
-#     capabilities = utils.read_and_concat_text_files(CAPABILITY_TEXT_FOLDER)
-
-#     openai_handler = OpenAIHandler(capabilities)
-
-#     capability_map = openai_handler.generate_capability_map()
-
-#     print(f"Here is the capability map: {capability_map}")
-
-#     reformat_capability_map = openai_handler.reformat_capability_map()
-
-#     #print(f"Here is the reformat_capability_map: {reformat_capability_map}")
-
-#     return jsonify({'reformat_capability_map': reformat_capability_map})
-
-
 @app.route('/download')
 def download_graph():
     # Path to the JSON file
