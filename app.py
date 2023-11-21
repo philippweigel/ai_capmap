@@ -73,6 +73,14 @@ def upload_file():
             txt_file.write(extracted_text)
 
 
+        extracted_texts = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
+        openai_handler = OpenAIHandler(extracted_texts)
+        capabilities = openai_handler.extract_capabilities_from_extracted_texts()
+
+        app.logger.info(capabilities)
+        utils.save_as_json_file(capabilities, CAPABILITY_TEXT_FOLDER)
+
+
         return jsonify({'message': 'File successfully uploaded'}), 200
     
 
@@ -88,23 +96,23 @@ def analyze_files():
     return jsonify({'capabilities': capabilities})
 
 
-@app.route('/generate', methods=['POST'])
-def generate_capability_map():
+# @app.route('/generate', methods=['POST'])
+# def generate_capability_map():
 
-    # Concatenate all texts from .txt files
-    capabilities = utils.read_and_concat_text_files(CAPABILITY_TEXT_FOLDER)
+#     # Concatenate all texts from .txt files
+#     capabilities = utils.read_and_concat_text_files(CAPABILITY_TEXT_FOLDER)
 
-    openai_handler = OpenAIHandler(capabilities)
+#     openai_handler = OpenAIHandler(capabilities)
 
-    capability_map = openai_handler.generate_capability_map()
+#     capability_map = openai_handler.generate_capability_map()
 
-    print(f"Here is the capability map: {capability_map}")
+#     print(f"Here is the capability map: {capability_map}")
 
-    reformat_capability_map = openai_handler.reformat_capability_map()
+#     reformat_capability_map = openai_handler.reformat_capability_map()
 
-    #print(f"Here is the reformat_capability_map: {reformat_capability_map}")
+#     #print(f"Here is the reformat_capability_map: {reformat_capability_map}")
 
-    return jsonify({'reformat_capability_map': reformat_capability_map})
+#     return jsonify({'reformat_capability_map': reformat_capability_map})
 
 
 @app.route('/download')
@@ -119,7 +127,6 @@ def download_graph():
     save_graph(json_data, pdf_file_path)
 
     return send_file(pdf_file_path, as_attachment=True)
-
 
 
 if __name__ == '__main__':

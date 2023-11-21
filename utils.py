@@ -49,7 +49,6 @@ def save_as_json_file(data, file_path):
     file_name = "data.json"
     file_path = file_path + file_name
 
-    print(file_path)
     try:
         # Check if data is a JSON string and parse it into a dictionary
         if isinstance(data, str):

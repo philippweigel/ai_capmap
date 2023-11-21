@@ -16,11 +16,6 @@ class OpenAIHandler:
     def generate_capability_map(self):
         return self.send_prompt(config.generate_capability_map_from_capabilities_prompt)
     
-    def reformat_capability_map(self):
-        instructions = config.reformat_capability_map_prompt
-        response = self.send_prompt(instructions)
-        return response
-    
 
     def send_prompt(self, instructions):
         full_prompt = f"{instructions} {self.input}"

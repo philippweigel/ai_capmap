@@ -9,28 +9,57 @@ OPENAI_MODEL = "gpt-3.5-turbo-1106"
 ####PROMPT CONFIGS
 
 extract_capabilities_from_texts_prompt = f"""
-    Here are the rules:
-    Ensure first level of business capabalities reflect the most critical to operations
-    Avoid overlapping capabilities
-    Aim to make your categories reflect key aspects of what the business actually does.
-    Return the message in JSON format with this structure:
+    As an expert enterprise architect and computer scientist, your task is to analyze a given text and extract key business capabilities. These capabilities should be structured into a JSON format, reflecting a hierarchical capability map based on the LeanIX reference model. Here are the specific guidelines:
 
+    Identify Critical Business Capabilities: Focus on identifying business capabilities that are most critical to the operations of the business. These should reflect the core business areas or main categories of capabilities.
+    Examples are, Strategic Management, Customer Relationships, Product Development, Production.
+
+    Structure the Hierarchy:
+
+    Level 0 Capabilities: These should represent the core business areas or main categories.
+    Level 1 Capabilities: These are more specific capabilities that detail the main categories.
+    Level 2 Capabilities: At this level, break down the Level 1 capabilities into even more specific functions or activities.
+    Avoid Overlapping Capabilities: Ensure that the capabilities identified do not overlap and each capability is distinct and clearly defined.
+
+    Create a JSON Structure: Structure the extracted capabilities into a JSON format as shown below. Ensure the JSON syntax is correct and there are no errors.
+
+    {{
     "capabilities": [
-    
-      "name": "Customer Management",
-      "level": 0,
-      "subCapabilities": 
-    
-    Make sure that there are no json syntax error
-
-
-    The map should reflect the hierarchical structure of these capabilities, 
-    taking into account of this structure:
-
-    Level 0: This level contains the core business areas or main categories of capabilities. Examples could be "customer management", "product development" or "operations and logistics".
-    Level 1: This level further details the main categories into more specific capabilities. For example, "Customer Management" could be broken down into "Customer Acquisition", "Customer Care" and "Customer Feedback Management".
-    Level 2: These levels break down the capabilities further into even more specific functions or activities. The focus here is on the level of detail and the mapping of specific functions or processes.
-    Please extract business capabilities from the following text:
+        {{
+        "name": "Customer Relationships",
+        "level": "0",
+        "subCapabilities": [
+            {{
+            "name": "Customer Management",
+            "level": "1",
+            "subCapabilities": [
+                {{
+                "name": "Identify Customer",
+                "level": "2"
+                }}
+            ]
+            }}
+        ]
+        }}
+        {{
+        "name": "Product Development",
+        "level": "0",
+        "subCapabilities": [
+            {{
+            "name": "Engineering",
+            "level": "1",
+            "subCapabilities": [
+                {{
+                "name": "Manage Requirements",
+                "level": "2"
+                }}
+            ]
+            }}
+        ]
+        }}
+    ]
+    }}
+    Text Analysis: Please analyze the following text to extract business capabilities and create a capability map in the JSON format mentioned above. Return just the JSON message
     """
 
 

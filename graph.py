@@ -33,7 +33,7 @@ def save_graph(json_data, pdf_path):
 
     # Visualize the graph
     plt.figure(figsize=(15, 15))
-    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=4000, font_size=10, arrowsize=20)
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=4000, font_size=10, arrowsize=20, margins=0, min_target_margin=25)
     plt.title('Capability Hierarchy')
 
     plt.savefig(pdf_path)
