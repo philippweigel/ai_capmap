@@ -160,6 +160,7 @@ cython_debug/
 #.idea/
 
 *.pdf
-*.txt
 
-capabilities/data.json
+capabilities/
+extracted_text/
+uploads/
