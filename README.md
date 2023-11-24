@@ -2,7 +2,7 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>AI_CAPMAP</h1>
-<h3>◦ HTTPStatus Exception: 401</h3>
+<h3>◦ Coming soon</h3>
 <h3>◦ Developed with the software and tools below.</h3>
 
 <p align="center">
@@ -39,13 +39,13 @@
 
 ##  Overview
 
-HTTPStatus Exception: 401
+Coming soon
 
 ---
 
 ##  Features
 
-HTTPStatus Exception: 401
+Coming soon
 
 ---
 
@@ -80,15 +80,15 @@ HTTPStatus Exception: 401
 
 | File                                                                                                | Summary                   |
 | ---                                                                                                 | ---                       |
-| [app.py](https://github.com/philippweigel/ai_capmap/blob/main/app.py)                               | HTTPStatus Exception: 401 |
-| [config.py](https://github.com/philippweigel/ai_capmap/blob/main/config.py)                         | HTTPStatus Exception: 401 |
-| [graph.py](https://github.com/philippweigel/ai_capmap/blob/main/graph.py)                           | HTTPStatus Exception: 401 |
-| [OpenAIHandlerClass.py](https://github.com/philippweigel/ai_capmap/blob/main/OpenAIHandlerClass.py) | HTTPStatus Exception: 401 |
-| [temp.dot](https://github.com/philippweigel/ai_capmap/blob/main/temp.dot)                           | HTTPStatus Exception: 401 |
-| [utils.py](https://github.com/philippweigel/ai_capmap/blob/main/utils.py)                           | HTTPStatus Exception: 401 |
-| [pylint.yml](https://github.com/philippweigel/ai_capmap/blob/main/.github\workflows\pylint.yml)     | HTTPStatus Exception: 401 |
-| [data.json](https://github.com/philippweigel/ai_capmap/blob/main/capabilities\data.json)            | HTTPStatus Exception: 401 |
-| [index.html](https://github.com/philippweigel/ai_capmap/blob/main/templates\index.html)             | HTTPStatus Exception: 401 |
+| [app.py](https://github.com/philippweigel/ai_capmap/blob/main/app.py)                               | Coming soon               |
+| [config.py](https://github.com/philippweigel/ai_capmap/blob/main/config.py)                         | Coming soon               |
+| [graph.py](https://github.com/philippweigel/ai_capmap/blob/main/graph.py)                           | Coming soon               |
+| [OpenAIHandlerClass.py](https://github.com/philippweigel/ai_capmap/blob/main/OpenAIHandlerClass.py) | Coming soon               |
+| [temp.dot](https://github.com/philippweigel/ai_capmap/blob/main/temp.dot)                           | Coming soon               |
+| [utils.py](https://github.com/philippweigel/ai_capmap/blob/main/utils.py)                           | Coming soon               |
+| [pylint.yml](https://github.com/philippweigel/ai_capmap/blob/main/.github\workflows\pylint.yml)     | Coming soon               |
+| [data.json](https://github.com/philippweigel/ai_capmap/blob/main/capabilities\data.json)            | Coming soon               |
+| [index.html](https://github.com/philippweigel/ai_capmap/blob/main/templates\index.html)             | Coming soon               |
 
 </details>
 
@@ -126,24 +126,13 @@ pip install -r requirements.txt
 ###  Running ai_capmap
 
 ```sh
-python main.py
+python app.py
 ```
 
 ###  Tests
 ```sh
 pytest
 ```
-
----
-
-
-##  Project Roadmap
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Implement Y`
-> - [ ] `ℹ️ ...`
-
-
 ---
 
 ##  Contributing
@@ -188,7 +177,7 @@ Once your PR is reviewed and approved, it will be merged into the main branch.
 ##  License
 
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is protected under the [GNU AGPLv3](https://choosealicense.com/licenses) License. For more details, refer to the [GNU AGPLv3](https://choosealicense.com/licenses/) file.
 
 ---
 
@@ -199,4 +188,3 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 [**Return**](#Top)
 
 ---
-
