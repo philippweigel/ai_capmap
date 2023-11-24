@@ -5,7 +5,7 @@
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "Ridepooling",
+                    "name": "Ridepooling Service",
                     "level": "1",
                     "subCapabilities": [
                         {
@@ -13,53 +13,39 @@
                             "level": "2"
                         },
                         {
-                            "name": "Multimodal Integration",
-                            "level": "2"
-                        },
-                        {
                             "name": "Fleet Management",
                             "level": "2"
                         },
                         {
-                            "name": "Co-Creation Process",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Autonomous Ridepooling",
-                            "level": "2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Stakeholder Partnerships",
-            "level": "0",
-            "subCapabilities": [
-                {
-                    "name": "Public Transport Collaboration",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Integration with Public Transport Tariffs",
-                            "level": "2"
-                        },
-                        {
-                            "name": "UITP Summit Partnership",
+                            "name": "Infrastructure Development",
                             "level": "2"
                         }
                     ]
                 },
                 {
-                    "name": "Collaborative Research",
+                    "name": "Autonomous Ridepooling",
                     "level": "1",
                     "subCapabilities": [
                         {
-                            "name": "Long-term Urban Mobility Studies",
+                            "name": "Autonomous Vehicle Development",
                             "level": "2"
                         },
                         {
-                            "name": "ALIKE Project Participation",
+                            "name": "Scalable Autonomous System",
+                            "level": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Public Transport Partnership",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Collaboration with Public Transport Authorities",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Integration with Public Transport Tariffs",
                             "level": "2"
                         }
                     ]
@@ -71,11 +57,21 @@
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "Transparent Pricing",
+                    "name": "User Interface Design",
                     "level": "1",
                     "subCapabilities": [
                         {
-                            "name": "Pre-booking Fare Estimation",
+                            "name": "Co-Creation Process",
+                            "level": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Multimodal Travel Support",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Integration with Other Transport Modes",
                             "level": "2"
                         }
                     ]
@@ -83,19 +79,51 @@
             ]
         },
         {
-            "name": "Infrastructure Development",
+            "name": "Operational Efficiency",
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "Barrierefreies Ridepooling",
+                    "name": "Cost-Effective Service",
                     "level": "1",
                     "subCapabilities": [
                         {
-                            "name": "Accessible Vehicles",
+                            "name": "Dynamic Pricing",
                             "level": "2"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Fleet Optimization",
+                    "level": "1",
+                    "subCapabilities": [
                         {
-                            "name": "Inclusive Service Area Design",
+                            "name": "Route Optimization",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Research and Development",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Long-Term Impact Analysis",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Mobility Behavior Research",
+                            "level": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Autonomous Vehicle Project",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Scalable Autonomous System Development",
                             "level": "2"
                         }
                     ]

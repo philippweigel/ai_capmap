@@ -8,10 +8,14 @@ OPENAI_MODEL = "gpt-3.5-turbo-1106"
 
 ####PROMPT CONFIGS
 
-extract_capabilities_from_texts_prompt = f"""
-    As an expert enterprise architect and computer scientist, your task is to analyze a given text and extract key business capabilities. These capabilities should be structured into a JSON format, reflecting a hierarchical capability map based on the LeanIX reference model. Here are the specific guidelines:
 
-    Identify Critical Business Capabilities: Focus on identifying business capabilities that are most critical to the operations of the business. These should reflect the core business areas or main categories of capabilities.
+extract_capabilities_from_texts_prompt = f"""
+    As an expert enterprise architect and computer scientist, your task is to analyze a given text and extract key business capabilities. 
+    These capabilities should be structured into a JSON format, reflecting a hierarchical capability map based on the LeanIX reference model. 
+    Here are the specific guidelines:
+
+    Identify Critical Business Capabilities: Focus on identifying business capabilities that are most critical to the operations of the business. 
+    These should reflect the core business areas or main categories of capabilities.
     Examples are, Strategic Management, Customer Relationships, Product Development, Production.
 
     Structure the Hierarchy:
@@ -63,22 +67,8 @@ extract_capabilities_from_texts_prompt = f"""
     """
 
 
-clean_texts_from_pdf_prompt = 'Bitte nur Rechtschreibfehler und Grammatikfehler vom folgenden Text ausbessern'
-
-
-generate_capability_map_from_capabilities_prompt = f"""
-    "Can you please create a capability map based on the LeanIX reference model? 
-    The map should reflect the hierarchical structure of these capabilities, 
-    taking into account of this structure:
-
-    Level 0: This level contains the core business areas or main categories of capabilities. Examples could be "customer management", "product development" or "operations and logistics".
-    Level 1: This level further details the main categories into more specific capabilities. For example, "Customer Management" could be broken down into "Customer Acquisition", "Customer Care" and "Customer Feedback Management".
-    Level 2: These levels break down the capabilities further into even more specific functions or activities. The focus here is on the level of detail and the mapping of specific functions or processes.
-
-    The capabilities have been extracted from a text and include the following capabilities, please put divide these categories into level 0 first: 
-
+improve_capability_map_prompt = f"""
+    Take on the role of an enterprise architect, evaluate the following capability map and suggest improvements and 
+    create a new enhanced version of the capability map in the JSON format like you received it. 
+    Return just the JSON message
     """
-
-reformat_capability_map_prompt = f"""
-Reformat and prepare the integrated capabilities so that it can be visualized with networkx 
-"""
