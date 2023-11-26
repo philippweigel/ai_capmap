@@ -1,7 +1,7 @@
 {
     "capabilities": [
         {
-            "name": "Urban Mobility Solutions",
+            "name": "Urban Mobility Management",
             "level": "0",
             "subCapabilities": [
                 {
@@ -17,7 +17,21 @@
                             "level": "2"
                         },
                         {
-                            "name": "Infrastructure Development",
+                            "name": "Infrastructure Management",
+                            "level": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Public Transport Integration",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Tariff Integration",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Intermodal Connectivity",
                             "level": "2"
                         }
                     ]
@@ -27,25 +41,11 @@
                     "level": "1",
                     "subCapabilities": [
                         {
-                            "name": "Autonomous Vehicle Development",
+                            "name": "Autonomous Fleet Development",
                             "level": "2"
                         },
                         {
                             "name": "Scalable Autonomous System",
-                            "level": "2"
-                        }
-                    ]
-                },
-                {
-                    "name": "Public Transport Partnership",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Collaboration with Public Transport Authorities",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Integration with Public Transport Tariffs",
                             "level": "2"
                         }
                     ]
@@ -58,49 +58,15 @@
             "subCapabilities": [
                 {
                     "name": "User Interface Design",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Co-Creation Process",
-                            "level": "2"
-                        }
-                    ]
+                    "level": "1"
                 },
                 {
-                    "name": "Multimodal Travel Support",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Integration with Other Transport Modes",
-                            "level": "2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Operational Efficiency",
-            "level": "0",
-            "subCapabilities": [
-                {
-                    "name": "Cost-Effective Service",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Dynamic Pricing",
-                            "level": "2"
-                        }
-                    ]
+                    "name": "Transparent Pricing",
+                    "level": "1"
                 },
                 {
-                    "name": "Fleet Optimization",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Route Optimization",
-                            "level": "2"
-                        }
-                    ]
+                    "name": "Multimodal Connectivity",
+                    "level": "1"
                 }
             ]
         },
@@ -109,24 +75,16 @@
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "Long-Term Impact Analysis",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Mobility Behavior Research",
-                            "level": "2"
-                        }
-                    ]
+                    "name": "Long-term Impact Analysis",
+                    "level": "1"
                 },
                 {
-                    "name": "Autonomous Vehicle Project",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Scalable Autonomous System Development",
-                            "level": "2"
-                        }
-                    ]
+                    "name": "Co-Creation Process",
+                    "level": "1"
+                },
+                {
+                    "name": "Technological Innovation",
+                    "level": "1"
                 }
             ]
         }
