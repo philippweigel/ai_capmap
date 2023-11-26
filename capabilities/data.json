@@ -17,7 +17,7 @@
                             "level": "2"
                         },
                         {
-                            "name": "Infrastructure Management",
+                            "name": "Infrastructure Development",
                             "level": "2"
                         }
                     ]
@@ -45,7 +45,7 @@
                             "level": "2"
                         },
                         {
-                            "name": "Scalable Autonomous System",
+                            "name": "Scalable On-Demand Services",
                             "level": "2"
                         }
                     ]
@@ -57,34 +57,100 @@
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "User Interface Design",
-                    "level": "1"
+                    "name": "Multimodal Travel",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Integration with Other Transport Modes",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Transparency in Pricing",
+                            "level": "2"
+                        }
+                    ]
                 },
                 {
-                    "name": "Transparent Pricing",
-                    "level": "1"
-                },
-                {
-                    "name": "Multimodal Connectivity",
-                    "level": "1"
+                    "name": "Accessibility",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Barrierefreies Ridepooling",
+                            "level": "2"
+                        }
+                    ]
                 }
             ]
         },
         {
-            "name": "Research and Development",
+            "name": "Technology Development",
             "level": "0",
             "subCapabilities": [
                 {
-                    "name": "Long-term Impact Analysis",
-                    "level": "1"
+                    "name": "Hardware and Software Development",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Algorithm Development",
+                            "level": "2"
+                        },
+                        {
+                            "name": "App Development",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Fleet Management System",
+                            "level": "2"
+                        }
+                    ]
                 },
                 {
-                    "name": "Co-Creation Process",
-                    "level": "1"
+                    "name": "Autonomous Vehicle Project",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Autonomous Vehicle Testing",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Scalable Deployment",
+                            "level": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Research and Innovation",
+            "level": "0",
+            "subCapabilities": [
+                {
+                    "name": "Long-term Impact Study",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "Traffic and Environmental Impact Analysis",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Social and Behavioral Impact Analysis",
+                            "level": "2"
+                        }
+                    ]
                 },
                 {
-                    "name": "Technological Innovation",
-                    "level": "1"
+                    "name": "Partnership and Co-Creation",
+                    "level": "1",
+                    "subCapabilities": [
+                        {
+                            "name": "User Engagement Workshops",
+                            "level": "2"
+                        },
+                        {
+                            "name": "Collaborative Development Approach",
+                            "level": "2"
+                        }
+                    ]
                 }
             ]
         }

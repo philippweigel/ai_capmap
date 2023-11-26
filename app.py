@@ -11,6 +11,8 @@ from OpenAIHandlerClass import OpenAIHandler
 from config import (UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER,
                     ALLOWED_EXTENSIONS, CAPABILITY_TEXT_FOLDER)
 
+
+
 from graph import save_graph
 
 # Load environment variables from .env file

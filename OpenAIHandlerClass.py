@@ -4,6 +4,7 @@ import openai
 
 
 model = config.OPENAI_MODEL
+embedding_model = config.EMBEDDING_MODEL
 
 class OpenAIHandler:
 
@@ -33,6 +34,21 @@ class OpenAIHandler:
             seed=1
             )
             return response.choices[0].message.content
+        except Exception as e:
+            print(f"Error communicating with OpenAI: {e}")
+            return None
+            # This code is for v1 of the openai package: pypi.org/project/openai
+
+
+
+    def get_embedding(self):
+        try:
+            response = openai.embeddings.create(
+            input = self.input,
+            model = embedding_model
+            
+            )
+            return response.data[0].embedding
         except Exception as e:
             print(f"Error communicating with OpenAI: {e}")
             return None

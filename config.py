@@ -3,6 +3,7 @@ EXTRACTED_TEXT_FOLDER = 'extracted_text'
 CAPABILITY_TEXT_FOLDER = 'capabilities/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx'}
 OPENAI_MODEL = "gpt-3.5-turbo-1106"
+EMBEDDING_MODEL = "text-embedding-ada-002"
 
 
 
