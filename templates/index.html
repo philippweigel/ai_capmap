@@ -34,7 +34,7 @@
         
           <div id="loading" style="display: none;">Uploading and processing...</div>
           <div id="downloadLink" style="display: none;">
-              File processed. <a href="/download">Click here to download.</a>
+              Files processed. <a href="/download">Download Capability Map</a>
           </div>
           
           <script>
@@ -49,7 +49,7 @@
                   }).then(response => response.json())
                     .then(data => {
                         document.getElementById('loading').style.display = 'none';
-                        if(data.message === 'File successfully uploaded') {
+                        if(data.message === 'Files successfully uploaded') {
                             document.getElementById('downloadLink').style.display = 'block';
                         } else {
                             alert('Error: ' + data.error);

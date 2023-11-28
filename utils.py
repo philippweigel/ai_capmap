@@ -3,6 +3,8 @@ import os
 from docx import Document
 import pytesseract
 from pdf2image import convert_from_path
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import pandas as pd
 
 def allowed_file(filename, allowed_extensions):
     return '.' in filename and \
@@ -65,6 +67,44 @@ def save_as_json_file(data, file_path):
 def read_json_from_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
+
+def get_text_chunks(text):
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=5000,
+        chunk_overlap=0,
+        length_function=len
+    )
+    chunks = text_splitter.split_text(text)
+    return chunks
+
+
+def delete_files_in_folder(folder_path):
+    # Check if the folder exists
+    if not os.path.exists(folder_path):
+        print(f"The folder {folder_path} does not exist.")
+        return
+
+    # Iterate over all files in the folder
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        try:
+            # Check if it's a file and not a directory
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"Deleted {file_path}")
+        except Exception as e:
+            print(f"Failed to delete {file_path}. Reason: {e}")
+
+def get_capabilities_from_sample_data(tier):
+    file_path = 'data/RefCapMapTrans.xlsx'
+
+    # Read the Excel file
+    df = pd.read_excel(file_path,skiprows=1)
+
+    filtered_df = df[(df['Tier'] == tier) & (df['Level'] == 1)]
+
+    return filtered_df["Capability"].head(10).values
+
 
 
 

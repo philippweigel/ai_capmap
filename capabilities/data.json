@@ -1,158 +1,126 @@
 {
     "capabilities": [
         {
-            "name": "Urban Mobility Management",
-            "level": "0",
+            "name": "Mobility Management",
+            "level": "1",
             "subCapabilities": [
                 {
-                    "name": "Ridepooling Service",
-                    "level": "1",
+                    "name": "On-Demand Ridepooling Services",
+                    "level": "2"
+                },
+                {
+                    "name": "Urban Transportation Analysis",
+                    "level": "2"
+                },
+                {
+                    "name": "Traffic Area Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Mobility Scenario Development",
+                    "level": "2"
+                },
+                {
+                    "name": "Mobility Research and Analysis",
+                    "level": "2"
+                },
+                {
+                    "name": "Multimodal Mobility Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Modal Split Analysis",
+                    "level": "2"
+                },
+                {
+                    "name": "User Demographics Analysis",
+                    "level": "2"
+                },
+                {
+                    "name": "Traffic Simulation and Modeling",
+                    "level": "2"
+                },
+                {
+                    "name": "Urban Mobility Policy Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Urban Mobility Management",
+                    "level": "2"
+                }
+            ]
+        },
+        {
+            "name": "Ridepooling Service Management",
+            "level": "1",
+            "subCapabilities": [
+                {
+                    "name": "Ridepooling Demand Modeling",
+                    "level": "2"
+                },
+                {
+                    "name": "Fleet Simulation",
+                    "level": "2"
+                },
+                {
+                    "name": "Fleet Management",
+                    "level": "2",
                     "subCapabilities": [
                         {
-                            "name": "Dynamic Pooling Algorithm",
-                            "level": "2"
+                            "name": "Route Assignment",
+                            "level": "3"
                         },
                         {
-                            "name": "Fleet Management",
-                            "level": "2"
+                            "name": "Service Area Management",
+                            "level": "3"
                         },
                         {
-                            "name": "Infrastructure Development",
-                            "level": "2"
+                            "name": "Ridepooling Management",
+                            "level": "3"
                         }
                     ]
+                },
+                {
+                    "name": "Customer Request Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Customer Waiting Time Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Dynamic Pricing and Fare Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Autonomous Ridepooling Project Management",
+                    "level": "2"
+                },
+                {
+                    "name": "Ridepooling Service Development",
+                    "level": "2"
                 },
                 {
                     "name": "Public Transport Integration",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Tariff Integration",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Intermodal Connectivity",
-                            "level": "2"
-                        }
-                    ]
-                },
-                {
-                    "name": "Autonomous Ridepooling",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Autonomous Fleet Development",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Scalable On-Demand Services",
-                            "level": "2"
-                        }
-                    ]
+                    "level": "2"
                 }
             ]
         },
         {
-            "name": "Customer Experience",
-            "level": "0",
-            "subCapabilities": [
-                {
-                    "name": "Multimodal Travel",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Integration with Other Transport Modes",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Transparency in Pricing",
-                            "level": "2"
-                        }
-                    ]
-                },
-                {
-                    "name": "Accessibility",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Barrierefreies Ridepooling",
-                            "level": "2"
-                        }
-                    ]
-                }
-            ]
+            "name": "Customer Engagement and Feedback Management",
+            "level": "1"
         },
         {
-            "name": "Technology Development",
-            "level": "0",
-            "subCapabilities": [
-                {
-                    "name": "Hardware and Software Development",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Algorithm Development",
-                            "level": "2"
-                        },
-                        {
-                            "name": "App Development",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Fleet Management System",
-                            "level": "2"
-                        }
-                    ]
-                },
-                {
-                    "name": "Autonomous Vehicle Project",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Autonomous Vehicle Testing",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Scalable Deployment",
-                            "level": "2"
-                        }
-                    ]
-                }
-            ]
+            "name": "Population Synthesis",
+            "level": "1"
         },
         {
-            "name": "Research and Innovation",
-            "level": "0",
-            "subCapabilities": [
-                {
-                    "name": "Long-term Impact Study",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "Traffic and Environmental Impact Analysis",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Social and Behavioral Impact Analysis",
-                            "level": "2"
-                        }
-                    ]
-                },
-                {
-                    "name": "Partnership and Co-Creation",
-                    "level": "1",
-                    "subCapabilities": [
-                        {
-                            "name": "User Engagement Workshops",
-                            "level": "2"
-                        },
-                        {
-                            "name": "Collaborative Development Approach",
-                            "level": "2"
-                        }
-                    ]
-                }
-            ]
+            "name": "Project Management",
+            "level": "1"
+        },
+        {
+            "name": "Partner Relationship Management",
+            "level": "1"
         }
     ]
 }
