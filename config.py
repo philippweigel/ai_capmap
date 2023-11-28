@@ -78,15 +78,15 @@ create_capability_map_prompt = f"""
         }}
         {{
         "name": "Product Management",
-        "level": "0",
+        "level": "1",
         "subCapabilities": [
             {{
             "name": "Product Development",
-            "level": "1",
+            "level": "2",
             "subCapabilities": [
                 {{
                 "name": "Product Design",
-                "level": "2"
+                "level": "3"
                 }}
             ]
             }}
