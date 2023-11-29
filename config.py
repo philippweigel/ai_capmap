@@ -14,10 +14,15 @@ tier_1_capabilities = utils.get_capabilities_from_sample_data(1)
 tier_2_capabilities = utils.get_capabilities_from_sample_data(2)
 tier_3_capabilities = utils.get_capabilities_from_sample_data(3)
 
+ref_capabilities = utils.get_capabilities_from_sample_data_as_reference()
+
 # Format capabilities into a string
 tier_1_capabilities = ', '.join(tier_1_capabilities)
 tier_2_capabilities = ', '.join(tier_2_capabilities)
 tier_3_capabilities = ', '.join(tier_3_capabilities)
+
+ref_capabilities = ', '.join(ref_capabilities)
+
 
 
 
@@ -26,7 +31,7 @@ extract_capabilities_from_text_chunk_prompt = f"""
     You will be provided a text where you need to identify max 3 Critical Business Capabilities.
     Focus on identifying business capabilities that are most critical to the operations of the business. 
     These should reflect the core business areas or main categories of capabilities.
-    Examples are {tier_1_capabilities}
+    Take the following capabilities as a reference {ref_capabilities}
     Make sure the naming of the capabilities goes have this structure like above mentioned: <Topic> <Definition of area>
     Make sure that the capabilities are translated into english
     Provide the extracted capabilities in a clear, bullet-point format and return only the capabilities without context.

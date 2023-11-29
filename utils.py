@@ -107,6 +107,18 @@ def get_capabilities_from_sample_data(tier):
 
 
 
+def get_capabilities_from_sample_data_as_reference():
+    file_path = 'data/RefCapMapTrans.xlsx'
+
+    # Read the Excel file
+    df = pd.read_excel(file_path,skiprows=1)
+
+    filtered_df = df[(df['Tier'] == 1)]
+
+    return filtered_df["Capability"].values
+
+
+
 
 
     
