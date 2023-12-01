@@ -1,46 +1,38 @@
 {
     "capabilities": [
         {
-            "name": "Ridepooling Service Management",
-            "level": "1",
-            "subCapabilities": [
-                {
-                    "name": "Ridepooling Management",
-                    "level": "2"
-                },
-                {
-                    "name": "Pricing Management",
-                    "level": "2"
-                },
-                {
-                    "name": "Customer Experience Management",
-                    "level": "2"
-                }
-            ]
-        },
-        {
-            "name": "Urban Mobility Solution Development",
+            "name": "Ridepooling Management",
             "level": "1",
             "subCapabilities": [
                 {
                     "name": "Ridepooling System Development",
                     "level": "2"
+                },
+                {
+                    "name": "Pricing Management",
+                    "level": "2"
                 }
             ]
         },
         {
-            "name": "Public Transport Partnership",
+            "name": "Urban Mobility Management",
+            "level": "1"
+        },
+        {
+            "name": "Co-Creation and User Engagement",
+            "level": "1"
+        },
+        {
+            "name": "Customer Experience Management",
             "level": "1"
         },
         {
             "name": "Mobility Service Management",
-            "level": "1",
-            "subCapabilities": [
-                {
-                    "name": "Technology Platform Management",
-                    "level": "2"
-                }
-            ]
+            "level": "1"
+        },
+        {
+            "name": "Technology Platform Management",
+            "level": "1"
         }
     ]
 }
