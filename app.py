@@ -79,6 +79,8 @@ def upload_file():
             logging.info(f"Saving uploaded file: {filename}")
             file.save(file_path)
 
+            logging.info(f"Process Extracting text started")
+
             # Extrahieren Sie den Text aus der Datei basierend auf dem Dateityp
             extracted_text = ""
             if filename.lower().endswith('.pdf'):
