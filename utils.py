@@ -34,9 +34,6 @@ def read_and_concat_text_files(folder_path):
 
 
 def clean_text(text):
-
-    text = text.strip()
-
     # Zerlegt den Text in Zeilen und entfernt Newlines
     lines = text.split('\n')
 

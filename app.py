@@ -103,14 +103,40 @@ def upload_file():
             logging.warning(f"Uploaded file has a disallowed extension: {file.filename}")
 
 
-    extracted_texts = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
+    try:
+        extracted_texts = utils.read_and_concat_text_files(EXTRACTED_TEXT_FOLDER)
+        if not extracted_texts:
+            raise ValueError("Extracted texts are empty.")
+    except Exception as e:
+        print(f"Error reading and concatenating text files: {e}")
+        extracted_texts = ""  # Setting to a default empty string
 
-    text_chunks = utils.get_text_chunks(extracted_texts)
+    try:
+        text_chunks = utils.get_text_chunks(extracted_texts)
+        if not text_chunks:
+            raise ValueError("Text chunks are empty.")
+    except Exception as e:
+        print(f"Error getting text chunks: {e}")
+        text_chunks = []  # Setting to a default empty list
 
-    extract_capabilities_from_text_chunk = utils.clean_text(config.extract_capabilities_from_text_chunk_prompt)
-    create_capability_map= utils.clean_text(config.create_capability_map_prompt)
+    try:
+        extract_capabilities_from_text_chunk = utils.clean_text(config.extract_capabilities_from_text_chunk_prompt)
+        if not extract_capabilities_from_text_chunk:
+            raise ValueError("Extract capabilities from text chunk prompt is empty.")
+    except Exception as e:
+        print(f"Error cleaning 'extract_capabilities_from_text_chunk' prompt: {e}")
+        extract_capabilities_from_text_chunk = ""  # Setting to a default empty string
+
+    try:
+        create_capability_map = utils.clean_text(config.create_capability_map_prompt)
+        if not create_capability_map:
+            raise ValueError("Create capability map prompt is empty.")
+    except Exception as e:
+        print(f"Error cleaning 'create_capability_map' prompt: {e}")
+        create_capability_map = ""  # Setting to a default empty string
 
     capabilities = []
+
 
     logging.info("Processing text chunks for capability extraction.")
 
