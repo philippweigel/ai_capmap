@@ -10,7 +10,13 @@
                 },
                 {
                     "name": "Public Transport Enhancement",
-                    "level": "2"
+                    "level": "2",
+                    "subCapabilities": [
+                        {
+                            "name": "Public Transport Integration",
+                            "level": "3"
+                        }
+                    ]
                 },
                 {
                     "name": "Traffic Area Management",
@@ -21,21 +27,59 @@
                     "level": "2"
                 },
                 {
-                    "name": "Mobility Service Management",
+                    "name": "Ridepooling Effects Analysis",
                     "level": "2",
                     "subCapabilities": [
                         {
-                            "name": "Fleet Management",
-                            "level": "3"
-                        },
+                            "name": "Ridepooling Management",
+                            "level": "3",
+                            "subCapabilities": [
+                                {
+                                    "name": "Ridepooling Service Development",
+                                    "level": "3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Urban Mobility Enhancement",
+                    "level": "2",
+                    "subCapabilities": [
                         {
-                            "name": "Vehicle Management",
+                            "name": "Urban Mobility Management",
+                            "level": "3",
+                            "subCapabilities": [
+                                {
+                                    "name": "Public-Private Partnership Management",
+                                    "level": "3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Mobility Behavior Analysis",
+                    "level": "2"
+                }
+            ]
+        },
+        {
+            "name": "Market Management",
+            "level": "1",
+            "subCapabilities": [
+                {
+                    "name": "Market Definition",
+                    "level": "2",
+                    "subCapabilities": [
+                        {
+                            "name": "Market Segmentation",
                             "level": "3"
                         }
                     ]
                 },
                 {
-                    "name": "Customer Behavior Analysis",
+                    "name": "Demand Modeling",
                     "level": "2"
                 },
                 {
@@ -43,40 +87,26 @@
                     "level": "2"
                 },
                 {
-                    "name": "Urban Mobility Integration",
-                    "level": "2"
-                },
-                {
-                    "name": "Public-Private Partnership Coordination",
-                    "level": "2"
-                },
-                {
-                    "name": "Research and Development Management",
+                    "name": "Modal Split Analysis",
                     "level": "2"
                 }
             ]
         },
         {
-            "name": "Ridepooling Management",
+            "name": "Fleet Management",
             "level": "1",
             "subCapabilities": [
                 {
-                    "name": "Ridepooling Effects Analysis",
+                    "name": "Fleet Simulation",
                     "level": "2"
                 },
                 {
-                    "name": "Ridepooling Demand Modeling",
+                    "name": "Route Assignment",
                     "level": "2"
                 },
                 {
-                    "name": "Ridepooling Service Management",
-                    "level": "2",
-                    "subCapabilities": [
-                        {
-                            "name": "Ridepooling Service Development",
-                            "level": "3"
-                        }
-                    ]
+                    "name": "Vehicle Management",
+                    "level": "2"
                 }
             ]
         },
@@ -87,15 +117,15 @@
                 {
                     "name": "Brand Portfolio Management",
                     "level": "2"
-                },
-                {
-                    "name": "Market Management",
-                    "level": "2"
                 }
             ]
         },
         {
-            "name": "Modal Split Analysis",
+            "name": "Investment Management",
+            "level": "1"
+        },
+        {
+            "name": "Research and Development Management",
             "level": "1"
         },
         {

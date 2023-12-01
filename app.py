@@ -40,7 +40,12 @@ for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER, CAPABILITY_TEXT_FOLDER]:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template(
+        'index.html',
+        divide_capabilities_prompt=utils.clean_text(config.divide_capabilities_prompt),
+        check_naming_of_capabilities_prompt=utils.clean_text(config.check_naming_of_capabilities_prompt),
+        aggregateSameTopicPrompt=utils.clean_text(config.aggregate_same_topic_prompt),
+        )
 
 @app.route('/upload', methods=['POST'])
 def upload_file():

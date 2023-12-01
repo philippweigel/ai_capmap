@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
     />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Document Upload and Capability Map Creation</title>
   </head>
   <body>
@@ -31,36 +32,31 @@
             <input type="file" id="document" name="document" accept=".pdf" multiple required />
             <button type="submit">Upload</button>
         </form>
+
+
+        <!-- Textareas for prompts -->
+        <div class="form-group">
+          <textarea id="divide_capabilities_prompt" placeholder="Divide Capabilities Prompt">
+            {{ divide_capabilities_prompt }}
+          </textarea>
+        </div>
+        <div class="form-group">
+          <textarea id="check_naming_of_capabilities_prompt" placeholder="Check Naming of Capabilities Prompt">
+            {{ check_naming_of_capabilities_prompt }}
+          </textarea>
+        </div>
+        <div class="form-group">
+          <textarea id="aggregateSameTopicPrompt" placeholder="Aggregate Same Topic Prompt">
+            {{ aggregateSameTopicPrompt }}
+          </textarea>
+        </div>
+          
         
           <div id="loading" style="display: none;">Uploading and processing...</div>
           <div id="downloadLink" style="display: none;">
               Files processed. <a href="/download">Download Capability Map</a>
           </div>
-          
-          <script>
-              document.getElementById('uploadForm').addEventListener('submit', function(event) {
-                  event.preventDefault();
-                  var formData = new FormData(this);
-                  document.getElementById('loading').style.display = 'block';
-          
-                  fetch('/upload', {
-                      method: 'POST',
-                      body: formData
-                  }).then(response => response.json())
-                    .then(data => {
-                        document.getElementById('loading').style.display = 'none';
-                        if(data.message === 'Files successfully uploaded') {
-                            document.getElementById('downloadLink').style.display = 'block';
-                        } else {
-                            alert('Error: ' + data.error);
-                        }
-                    })
-                    .catch(error => {
-                        document.getElementById('loading').style.display = 'none';
-                        alert('Error: ' + error);
-                    });
-              });
-          </script>
+        
       </div>
     </main>
     <footer class="container">
@@ -69,5 +65,31 @@
         <a href="#">Terms of Service</a></small
       >
     </footer>
+
+    <script>
+      document.getElementById('uploadForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var formData = new FormData(this);
+          document.getElementById('loading').style.display = 'block';
+  
+          fetch('/upload', {
+              method: 'POST',
+              body: formData
+          }).then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                if(data.message === 'Files successfully uploaded') {
+                    document.getElementById('downloadLink').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                alert('Error: ' + error);
+            });
+      });
+  </script>
+  
   </body>
 </html>
