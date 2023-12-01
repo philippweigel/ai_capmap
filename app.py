@@ -85,7 +85,7 @@ def upload_file():
             extracted_text = ""
             if filename.lower().endswith('.pdf'):
                 extracted_text = utils.extract_text_from_pdf(file_path)
-                logging.info(f"Text from PDF started")
+                logging.info(f"Text from PDF extracted: {filename}")
             elif filename.lower().endswith('.docx'):
                 extracted_text = utils.extract_text_from_docx(file_path)
             else:

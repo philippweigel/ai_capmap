@@ -12,10 +12,20 @@ def allowed_file(filename, allowed_extensions):
            filename.rsplit('.', 1)[1].lower() in allowed_extensions
 
 def extract_text_from_pdf(pdf_path):
-    with open(pdf_path, 'rb') as file:
-        images = convert_from_path(pdf_path)
-        extracted_texts = [pytesseract.image_to_string(image) for image in images]
-        return ' '.join(extracted_texts)
+    # Convert PDF pages to images
+    images = convert_from_path(pdf_path)
+
+    # Initialize an empty list to hold extracted text
+    extracted_texts = []
+
+    # Extract text from each image
+    for image in images:
+        text = pytesseract.image_to_string(image)
+        extracted_texts.append(text)
+
+    # Combine all extracted texts into a single string
+    combined_text = ' '.join(extracted_texts)
+    return combined_text
 
 def extract_text_from_docx(docx_path):
     doc = Document(docx_path)
