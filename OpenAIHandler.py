@@ -1,6 +1,7 @@
 import config
 import openai
 import utils
+from flask import request
 
 model = config.OPENAI_MODEL
 
@@ -13,12 +14,17 @@ def send_prompt(instructions, input):
 
     response_format = { "type": "text" }
 
-    # Modify the message based on specific instructions
-    if instructions == config.create_capability_map_prompt:
-        base_message.append({"role": "assistant", "content": utils.clean_text(config.divide_capabilities_prompt)})
-        base_message.append({"role": "assistant", "content": utils.clean_text(config.check_naming_of_capabilities_prompt)})
-        base_message.append({"role": "assistant", "content": utils.clean_text(config.aggregate_same_topic_prompt)})
-        response_format = { "type": "json_object" }
+    # Get the textarea values from the form data
+    divide_capabilities_prompt = request.form.get('divide_capabilities_prompt')
+    check_naming_of_capabilities_prompt = request.form.get('check_naming_of_capabilities_prompt')
+    aggregate_same_topic_prompt = request.form.get('aggregate_same_topic_prompt')
+
+    # Use the textarea values instead of config values
+    if instructions == config.create_capability_map_prompt: 
+        base_message.append({"role": "assistant", "content": utils.clean_text(divide_capabilities_prompt)})
+        base_message.append({"role": "assistant", "content": utils.clean_text(check_naming_of_capabilities_prompt)})
+        base_message.append({"role": "assistant", "content": utils.clean_text(aggregate_same_topic_prompt)})
+        response_format = {"type": "json_object"}
 
     # Handle unknown instructions
     if not base_message:

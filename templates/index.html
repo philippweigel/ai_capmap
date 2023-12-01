@@ -75,6 +75,16 @@
       document.getElementById('uploadForm').addEventListener('submit', function(event) {
           event.preventDefault();
           var formData = new FormData(this);
+              // Get the values from the textareas and append them to the formData
+          var divideCapabilitiesPrompt = document.getElementById('divide_capabilities_prompt').value;
+          var checkNamingOfCapabilitiesPrompt = document.getElementById('check_naming_of_capabilities_prompt').value;
+          var aggregateSameTopicPrompt = document.getElementById('aggregateSameTopicPrompt').value;
+
+          formData.append('divide_capabilities_prompt', divideCapabilitiesPrompt);
+          formData.append('check_naming_of_capabilities_prompt', checkNamingOfCapabilitiesPrompt);
+          formData.append('aggregate_same_topic_prompt', aggregateSameTopicPrompt);
+
+
           document.getElementById('loading').style.display = 'block';
   
           fetch('/upload', {

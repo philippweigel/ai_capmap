@@ -165,3 +165,4 @@ capabilities/
 extracted_text/
 uploads/
 static/
+*.json
