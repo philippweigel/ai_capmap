@@ -5,6 +5,7 @@ import pytesseract
 from pdf2image import convert_from_path
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import pandas as pd
+import csv
 
 def allowed_file(filename, allowed_extensions):
     return '.' in filename and \
@@ -33,6 +34,9 @@ def read_and_concat_text_files(folder_path):
 
 
 def clean_text(text):
+
+    text = text.strip()
+
     # Zerlegt den Text in Zeilen und entfernt Newlines
     lines = text.split('\n')
 
@@ -95,27 +99,32 @@ def delete_files_in_folder(folder_path):
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
 
-def get_capabilities_from_sample_data(tier):
+
+
+def get_capabilities_from_sample_data_as_reference(tier, level):
     file_path = 'data/RefCapMapTrans.xlsx'
 
     # Read the Excel file
     df = pd.read_excel(file_path,skiprows=1)
 
-    filtered_df = df[(df['Tier'] == tier) & (df['Level'] == 1)]
-
-    return filtered_df["Capability"].head(10).values
-
-
-
-def get_capabilities_from_sample_data_as_reference():
-    file_path = 'data/RefCapMapTrans.xlsx'
-
-    # Read the Excel file
-    df = pd.read_excel(file_path,skiprows=1)
-
-    filtered_df = df[(df['Tier'] == 1)]
+    filtered_df = df[(df['Tier'] == tier) & (df['Level'] == level)]
 
     return filtered_df["Capability"].values
+
+
+def convert_json_to_csv(json_data, csv_file_path):
+    with open(csv_file_path, mode='w', newline='', encoding='utf-8') as file:
+        csv_writer = csv.writer(file, delimiter=";")
+        csv_writer.writerow(['Capability Name', 'Level', 'Parent Capability', 'Description'])
+
+        def write_row(capability, level, parent_name=None):
+            csv_writer.writerow([capability['name'], level, parent_name,''])
+            for sub_capability in capability.get('subCapabilities', []):
+                write_row(sub_capability, str(int(level) + 1), capability['name'])
+
+        for capability in json_data['capabilities']:
+            write_row(capability, capability['level'])
+
 
 
 

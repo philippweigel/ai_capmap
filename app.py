@@ -13,6 +13,7 @@ from config import (UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER,
 
 from graph import save_graph
 import logging
+import zipfile
 
 # Load environment variables from .env file
 load_dotenv()
@@ -136,16 +137,26 @@ def upload_file():
 
 @app.route('/download')
 def download_graph():
-    # Path to the JSON file
+    # Paths to the JSON, PDF, and CSV files
     json_file_path = 'capabilities/data.json'
-    json_data = utils.read_json_from_file(json_file_path)
-
-    pdf_file_path = "static/file.pdf"
+    pdf_file_path = "static/capabilities.pdf"
+    csv_file_path = "static/capabilities.csv"
 
     # Read and parse the JSON file
+    json_data = utils.read_json_from_file(json_file_path)
     save_graph(json_data, pdf_file_path)
 
-    return send_file(pdf_file_path, as_attachment=True)
+    # Convert JSON data to CSV format
+    utils.convert_json_to_csv(json_data, csv_file_path)
+
+    # Create a zip file
+    zip_file_path = "static/capabilities.zip"
+    with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        zipf.write(pdf_file_path, os.path.basename(pdf_file_path))
+        zipf.write(csv_file_path, os.path.basename(csv_file_path))
+
+    # Send zip file as attachment
+    return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
 
 
 if __name__ == '__main__':

@@ -27,3 +27,20 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+.textarea-container {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.toggle-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-label .toggle-icon {
+  transition: transform 0.3s ease;
+}
+.toggle-label .toggle-icon.collapsed {
+  transform: rotate(-90deg);
+}

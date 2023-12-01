@@ -33,23 +33,28 @@
             <button type="submit">Upload</button>
         </form>
 
+        
+        <!-- Textareas for prompts with clickable labels -->
+        <div class="form-group">
+          <label for="divide_capabilities_prompt" class="toggle-label">Instructions #1:<span class="toggle-icon">▼</span></label>
+          <div class="textarea-container">
+              <textarea id="divide_capabilities_prompt" placeholder="Divide Capabilities Prompt" rows=10>{{ divide_capabilities_prompt }}
+              </textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="check_naming_of_capabilities_prompt" class="toggle-label">Instructions #2:<span class="toggle-icon">▼</span></label>
+          <div class="textarea-container">
+              <textarea id="check_naming_of_capabilities_prompt" placeholder="Check Naming of Capabilities Prompt" rows=10>{{ check_naming_of_capabilities_prompt }}</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="aggregateSameTopicPrompt" class="toggle-label">Instructions #3:<span class="toggle-icon">▼</span></label>
+          <div class="textarea-container">
+              <textarea id="aggregateSameTopicPrompt" placeholder="Aggregate Same Topic Prompt" rows=10>{{ aggregateSameTopicPrompt }}</textarea>
+          </div>
+        </div>
 
-        <!-- Textareas for prompts -->
-        <div class="form-group">
-          <textarea id="divide_capabilities_prompt" placeholder="Divide Capabilities Prompt">
-            {{ divide_capabilities_prompt }}
-          </textarea>
-        </div>
-        <div class="form-group">
-          <textarea id="check_naming_of_capabilities_prompt" placeholder="Check Naming of Capabilities Prompt">
-            {{ check_naming_of_capabilities_prompt }}
-          </textarea>
-        </div>
-        <div class="form-group">
-          <textarea id="aggregateSameTopicPrompt" placeholder="Aggregate Same Topic Prompt">
-            {{ aggregateSameTopicPrompt }}
-          </textarea>
-        </div>
           
         
           <div id="loading" style="display: none;">Uploading and processing...</div>
@@ -89,7 +94,39 @@
                 alert('Error: ' + error);
             });
       });
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleLabels = document.querySelectorAll('.toggle-label');
+        
+        toggleLabels.forEach(label => {
+            label.addEventListener('click', function() {
+                const textareaContainer = this.nextElementSibling;
+                if (textareaContainer.style.display === 'none') {
+                    textareaContainer.style.display = 'block';
+                } else {
+                    textareaContainer.style.display = 'none';
+                }
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleLabels = document.querySelectorAll('.toggle-label');
+      
+      toggleLabels.forEach(label => {
+          label.addEventListener('click', function() {
+              const textareaContainer = this.nextElementSibling;
+              const icon = this.querySelector('.toggle-icon');
+
+              if (textareaContainer.style.maxHeight) {
+                  textareaContainer.style.maxHeight = null;
+                  icon.classList.add('collapsed');
+              } else {
+                  textareaContainer.style.maxHeight = textareaContainer.scrollHeight + "px";
+                  icon.classList.remove('collapsed');
+              }
+          });
+      });
+  });
   </script>
-  
+
   </body>
 </html>

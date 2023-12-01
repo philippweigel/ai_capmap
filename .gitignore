@@ -160,8 +160,8 @@ cython_debug/
 #.idea/
 
 *.pdf
-*.xlsx
 
 capabilities/
 extracted_text/
 uploads/
+static/
