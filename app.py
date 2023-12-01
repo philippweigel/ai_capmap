@@ -144,7 +144,7 @@ def download_graph():
 
     # Read and parse the JSON file
     json_data = utils.read_json_from_file(json_file_path)
-    save_graph(json_data, pdf_file_path)
+    #save_graph(json_data, pdf_file_path)
 
     # Convert JSON data to CSV format
     utils.convert_json_to_csv(json_data, csv_file_path)
@@ -156,7 +156,8 @@ def download_graph():
         zipf.write(csv_file_path, os.path.basename(csv_file_path))
 
     # Send zip file as attachment
-    return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
+    #return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
+    return send_file(csv_file_path, as_attachment=True, download_name='capabilities.csv')
 
 
 if __name__ == '__main__':

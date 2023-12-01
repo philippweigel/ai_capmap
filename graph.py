@@ -1,4 +1,3 @@
-import json
 import networkx as nx
 import matplotlib
 import matplotlib.pyplot as plt
