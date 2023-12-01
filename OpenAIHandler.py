@@ -1,5 +1,4 @@
 import config
-import os
 import openai
 import utils
 
