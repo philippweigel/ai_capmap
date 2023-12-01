@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get install -y \
        tesseract-ocr \
        graphviz \
+       poppler-utils \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
