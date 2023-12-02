@@ -173,7 +173,7 @@ def download_graph():
 
     # Read and parse the JSON file
     json_data = utils.read_json_from_file(json_file_path)
-    #save_graph(json_data, pdf_file_path)
+    save_graph(json_data, pdf_file_path)
 
     # Convert JSON data to CSV format
     utils.convert_json_to_csv(json_data, csv_file_path)
