@@ -28,4 +28,4 @@ RUN pip install gunicorn
 EXPOSE 8000
 
 # Run the app using Gunicorn. Replace 'myapp:app' with your application's module and variable
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "--timeout", "600", "app:app"]
