@@ -185,8 +185,8 @@ def download_graph():
         zipf.write(csv_file_path, os.path.basename(csv_file_path))
 
     # Send zip file as attachment
-    #return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
-    return send_file(csv_file_path, as_attachment=True, download_name='capabilities.csv')
+    return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
+    #return send_file(csv_file_path, as_attachment=True, download_name='capabilities.csv')
 
 
 if __name__ == '__main__':
