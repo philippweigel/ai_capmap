@@ -1,38 +1,220 @@
 {
     "capabilities": [
         {
-            "name": "Ridepooling Management",
+            "name": "Mobility Management",
             "level": "1",
             "subCapabilities": [
                 {
-                    "name": "Ridepooling System Development",
+                    "name": "Ridepooling Services",
+                    "level": "2",
+                    "subCapabilities": [
+                        {
+                            "name": "Ridepooling Service Operations",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Demand Management and Forecasting",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Fleet Management and Optimization",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Customer Behavior Analysis and Segmentation",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Mobility Service Usage Data Collection and Analysis",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Pooling Optimization for Efficiency",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Service Coverage and Expansion",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Pricing and Fare Structure",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Impact on Overall Traffic and Modal Split",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Population Growth and Demographic Impact on Transportation",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Public Transportation Expansion and Improvement",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Car and Bikesharing Services Expansion",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Ridepooling Service Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Fleet Management and Expansion",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Service Area Expansion and Adjustment",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Demand and Ride Volume Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Customer Wait Time Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Emission Reduction and Environmental Impact Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Automation and Autonomous Vehicle Operation",
+                            "level": "3"
+                        }
+                    ]
+                },
+                {
+                    "name": "Multimodal Transportation Options",
                     "level": "2"
                 },
                 {
-                    "name": "Pricing Management",
-                    "level": "2"
+                    "name": "Urban Mobility Planning and Policy",
+                    "level": "2",
+                    "subCapabilities": [
+                        {
+                            "name": "Sustainable Transportation Alternatives",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Scalability of Ridepooling Services",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Mobility Habits and Routines",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Collaboration Between Mobility Providers and Cities",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Development and Expansion of Mobility Services",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Modern and Sustainable Mobility Systems",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Urban Mobility Solutions",
+                            "level": "3"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ridepooling Service",
+                    "level": "2",
+                    "subCapabilities": [
+                        {
+                            "name": "Fleet Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Infrastructure Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "High-Speed Internet Connectivity",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Electric Vehicles",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Co-Creation Process for Development",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Barrier-Free Ridepooling with Wheelchair-Accessible Vehicles",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Specialized Trained Drivers",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Ridepooling Service Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Dynamic Route Planning",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Pricing and Fare Calculation",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Customer Booking and Transparency",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Customer Satisfaction Monitoring",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Service Area Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Virtual Stops Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Vehicle and Driver Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Research and Development for New Mobility Solutions",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Multimodal Transportation Integration",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Autonomous Ridepooling Project Development",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Project Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Partner Management",
+                            "level": "3"
+                        },
+                        {
+                            "name": "Offer Creation",
+                            "level": "3"
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            "name": "Urban Mobility Management",
-            "level": "1"
-        },
-        {
-            "name": "Co-Creation and User Engagement",
-            "level": "1"
-        },
-        {
-            "name": "Customer Experience Management",
-            "level": "1"
-        },
-        {
-            "name": "Mobility Service Management",
-            "level": "1"
-        },
-        {
-            "name": "Technology Platform Management",
-            "level": "1"
         }
     ]
 }

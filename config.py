@@ -18,11 +18,9 @@ level_2_capabilities = ', '.join(level_2_capabilities)
 
 extract_capabilities_from_text_chunk_prompt = f"""
     Take the role as an expert enterprise architect.
-    You will be provided a text where you need to identify max 3 Critical Business Capabilities.
+    You will be provided a text where you need to identify business capabilities.
     Focus on identifying business capabilities that are most critical to the operations of the business. 
     These should reflect the core business areas or main categories of capabilities.
-    Take the following capabilities as a reference {level_1_capabilities} {level_2_capabilities}
-    Make sure the naming of the capabilities goes have this structure like above mentioned.
     Make sure that the capabilities are translated into english
     Provide the extracted capabilities in a clear, bullet-point format and return only the capabilities without context.
     If no capabilities can be found, then return nothing.
@@ -33,15 +31,11 @@ extract_capabilities_from_text_chunk_prompt = f"""
 
 
 create_capability_map_prompt = f"""
-    As an expert enterprise architect and computer scientist, your task is to analyze the listed business capabilities. 
+    As an expert enterprise architect, your task is to analyze the listed business capabilities. 
     These capabilities should be structured into a JSON format, reflecting a hierarchical capability map based on the LeanIX reference model. 
     Here are the specific guidelines:
 
-    Pick max. 10 of the most Critical Business Capabilities of the list: Focus on identifying business capabilities that are most critical to the operations of the business. 
-    These should reflect the core business areas or main categories of capabilities.
-    Examples are, Strategic Management, Customer Management, Product Development.
-    Make sure the naming of the capabilities goes have this structure like above mentioned: <Topic> <Definition of area>
-
+    Focus on identifying business capabilities that are most critical to the operations of the business. 
     Structure the Hierarchy:
 
     Level 1 Capabilities: These should represent the core business areas or main categories. Examples are {level_1_capabilities}
@@ -107,4 +101,8 @@ aggregate_same_topic_prompt = f"""Evaluate the following capability map and adju
     Return just the JSON message
 
     Capability Map: <insert capability map>
+"""
+
+
+instruction_prompt = f"""Try to improve the capability map
 """

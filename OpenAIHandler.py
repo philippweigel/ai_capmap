@@ -16,14 +16,19 @@ def send_prompt(instructions, input):
 
     # Get the textarea values from the form data
     divide_capabilities_prompt = request.form.get('divide_capabilities_prompt')
-    check_naming_of_capabilities_prompt = request.form.get('check_naming_of_capabilities_prompt')
-    aggregate_same_topic_prompt = request.form.get('aggregate_same_topic_prompt')
+    # check_naming_of_capabilities_prompt = request.form.get('check_naming_of_capabilities_prompt')
+    # aggregate_same_topic_prompt = request.form.get('aggregate_same_topic_prompt')
+
+
+    print(f"Instructions 1#: {divide_capabilities_prompt}")
+    # print(f"Instructions 2#: {check_naming_of_capabilities_prompt}")
+    # print(f"Instructions 3#: {aggregate_same_topic_prompt}")
 
     # Use the textarea values instead of config values
     if instructions == config.create_capability_map_prompt: 
         base_message.append({"role": "assistant", "content": utils.clean_text(divide_capabilities_prompt)})
-        base_message.append({"role": "assistant", "content": utils.clean_text(check_naming_of_capabilities_prompt)})
-        base_message.append({"role": "assistant", "content": utils.clean_text(aggregate_same_topic_prompt)})
+        # base_message.append({"role": "assistant", "content": utils.clean_text(check_naming_of_capabilities_prompt)})
+        # base_message.append({"role": "assistant", "content": utils.clean_text(aggregate_same_topic_prompt)})
         response_format = {"type": "json_object"}
 
     # Handle unknown instructions
