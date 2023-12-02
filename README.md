@@ -129,12 +129,6 @@ pip install -r requirements.txt
 python app.py
 ```
 
-###  Tests
-```sh
-pytest
-```
----
-
 ##  Contributing
 
 Contributions are welcome! Here are several ways you can contribute:
