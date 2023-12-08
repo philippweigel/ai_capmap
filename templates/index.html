@@ -33,12 +33,32 @@
             <button type="submit">Upload</button>
         </form>
 
+
+        <!-- Textareas for prompts with clickable labels -->
+        <div class="form-group">
+          <label for="extract_capabilities_from_text_chunk_prompt" class="toggle-label">Extraction Capability Prompt:<span class="toggle-icon">▼</span></label>
+          <div class="textarea-container">
+              <textarea id="extract_capabilities_from_text_chunk_prompt" readonly rows=10>{{ extract_capabilities_from_text_chunk_prompt }} 
+              </textarea>
+          </div>
+        </div>
+
+
+      <!-- Textareas for prompts with clickable labels -->
+      <div class="form-group">
+        <label for="create_capability_map_prompt" class="toggle-label">Generate Capability Map Prompt:<span class="toggle-icon">▼</span></label>
+        <div class="textarea-container">
+            <textarea id="create_capability_map_prompt" readonly rows=10>{{ create_capability_map_prompt }}
+            </textarea>
+        </div>
+      </div>
+        
         
         <!-- Textareas for prompts with clickable labels -->
         <div class="form-group">
-          <label for="divide_capabilities_prompt" class="toggle-label">Instructions #1:<span class="toggle-icon">▼</span></label>
+          <label for="divide_capabilities_prompt" class="toggle-label">Custom Instruction Prompt (Can be edited):<span class="toggle-icon">▼</span></label>
           <div class="textarea-container">
-              <textarea id="divide_capabilities_prompt" placeholder="Divide Capabilities Prompt" rows=10>{{ divide_capabilities_prompt }}
+              <textarea id="divide_capabilities_prompt" rows=10>{{ divide_capabilities_prompt }}
               </textarea>
           </div>
         </div>
@@ -67,8 +87,8 @@
           event.preventDefault();
           var formData = new FormData(this);
               // Get the values from the textareas and append them to the formData
-          var divideCapabilitiesPrompt = document.getElementById('divide_capabilities_prompt').value;
 
+          var divideCapabilitiesPrompt = document.getElementById('divide_capabilities_prompt').value;
 
           formData.append('divide_capabilities_prompt', divideCapabilitiesPrompt);
 

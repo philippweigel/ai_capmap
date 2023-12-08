@@ -43,6 +43,8 @@ for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER, CAPABILITY_TEXT_FOLDER]:
 def index():
     return render_template(
         'index.html',
+        extract_capabilities_from_text_chunk_prompt=utils.clean_text(config.extract_capabilities_from_text_chunk_prompt),
+        create_capability_map_prompt=utils.clean_text(config.create_capability_map_prompt),
         divide_capabilities_prompt=utils.clean_text(config.divide_capabilities_prompt),
         check_naming_of_capabilities_prompt=utils.clean_text(config.check_naming_of_capabilities_prompt),
         aggregateSameTopicPrompt=utils.clean_text(config.aggregate_same_topic_prompt),
