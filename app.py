@@ -42,12 +42,7 @@ for folder in [UPLOAD_FOLDER, EXTRACTED_TEXT_FOLDER, CAPABILITY_TEXT_FOLDER]:
 @app.route('/')
 def index():
     return render_template(
-        'index.html',
-        extract_capabilities_from_text_chunk_prompt=utils.clean_text(config.extract_capabilities_from_text_chunk_prompt),
-        create_capability_map_prompt=utils.clean_text(config.create_capability_map_prompt),
-        divide_capabilities_prompt=utils.clean_text(config.divide_capabilities_prompt),
-        check_naming_of_capabilities_prompt=utils.clean_text(config.check_naming_of_capabilities_prompt),
-        aggregateSameTopicPrompt=utils.clean_text(config.aggregate_same_topic_prompt),
+        'index.html'
         )
 
 @app.route('/upload', methods=['POST'])
@@ -159,7 +154,7 @@ def upload_file():
     # Join all capabilities into a single string
     all_capabilities_text = '\n'.join(filtered_capabilities)
 
-    capability_map = OpenAIHandler.send_prompt(create_capability_map, all_capabilities_text)
+    capability_map = OpenAIHandler.send_prompt("create capability map", all_capabilities_text)
 
     utils.save_as_json_file(capability_map, CAPABILITY_TEXT_FOLDER)
 
@@ -188,7 +183,6 @@ def download_graph():
 
     # Send zip file as attachment
     return send_file(zip_file_path, as_attachment=True, download_name='capabilities.zip')
-    #return send_file(csv_file_path, as_attachment=True, download_name='capabilities.csv')
 
 
 if __name__ == '__main__':

@@ -122,15 +122,15 @@ def get_capabilities_from_sample_data_as_reference(tier, level):
 def convert_json_to_csv(json_data, csv_file_path):
     with open(csv_file_path, mode='w', newline='', encoding='utf-8') as file:
         csv_writer = csv.writer(file, delimiter=";")
-        csv_writer.writerow(['Capability Name', 'Level', 'Parent Capability', 'Description'])
+        csv_writer.writerow(['Capability Name', 'Level', 'Tier', 'Parent Capability', 'Description'])
 
-        def write_row(capability, level, parent_name=None):
-            csv_writer.writerow([capability['name'], level, parent_name,''])
+        def write_row(capability, level, tier, parent_name=None):
+            csv_writer.writerow([capability['name'], level, tier, parent_name,''])
             for sub_capability in capability.get('subCapabilities', []):
-                write_row(sub_capability, str(int(level) + 1), capability['name'])
+                write_row(sub_capability, str(int(level) + 1), tier, capability['name'])
 
         for capability in json_data['capabilities']:
-            write_row(capability, capability['level'])
+            write_row(capability, capability['level'], capability['tier'])
 
 
 

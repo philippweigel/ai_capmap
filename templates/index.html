@@ -29,7 +29,7 @@
             representation of the capabilities or themes within the documents.
           </p>
           <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="document" name="document" accept=".pdf" multiple required />
+            <input type="file" id="document" name="document" accept=".pdf, .doc, .docx, .xls, .xlsx, .csv" multiple required />
             <button type="submit">Upload</button>
         </form>
 
@@ -73,7 +73,7 @@
               Files processed. <a href="/download">Download Capability Map</a>
           </div>
         
-      </div>
+    </div>
     </main>
     <footer class="container">
       <small
@@ -82,69 +82,7 @@
       >
     </footer>
 
-    <script>
-      document.getElementById('uploadForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          var formData = new FormData(this);
-              // Get the values from the textareas and append them to the formData
-
-          var divideCapabilitiesPrompt = document.getElementById('divide_capabilities_prompt').value;
-
-          formData.append('divide_capabilities_prompt', divideCapabilitiesPrompt);
-
-
-          document.getElementById('loading').style.display = 'block';
-  
-          fetch('/upload', {
-              method: 'POST',
-              body: formData
-          }).then(response => response.json())
-            .then(data => {
-                document.getElementById('loading').style.display = 'none';
-                if(data.message === 'Files successfully uploaded') {
-                    document.getElementById('downloadLink').style.display = 'block';
-                } else {
-                    alert('Error: ' + data.error);
-                }
-            })
-            .catch(error => {
-                document.getElementById('loading').style.display = 'none';
-                alert('Error: ' + error);
-            });
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggleLabels = document.querySelectorAll('.toggle-label');
-        
-        toggleLabels.forEach(label => {
-            label.addEventListener('click', function() {
-                const textareaContainer = this.nextElementSibling;
-                if (textareaContainer.style.display === 'none') {
-                    textareaContainer.style.display = 'block';
-                } else {
-                    textareaContainer.style.display = 'none';
-                }
-            });
-        });
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleLabels = document.querySelectorAll('.toggle-label');
-      
-      toggleLabels.forEach(label => {
-          label.addEventListener('click', function() {
-              const textareaContainer = this.nextElementSibling;
-              const icon = this.querySelector('.toggle-icon');
-
-              if (textareaContainer.style.maxHeight) {
-                  textareaContainer.style.maxHeight = null;
-                  icon.classList.add('collapsed');
-              } else {
-                  textareaContainer.style.maxHeight = textareaContainer.scrollHeight + "px";
-                  icon.classList.remove('collapsed');
-              }
-          });
-      });
-  });
-  </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
   </body>
 </html>

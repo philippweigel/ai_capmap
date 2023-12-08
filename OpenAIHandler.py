@@ -1,7 +1,6 @@
 import config
 import openai
 import utils
-from flask import request
 
 model = config.OPENAI_MODEL
 
@@ -14,21 +13,15 @@ def send_prompt(instructions, input):
 
     response_format = { "type": "text" }
 
-    # Get the textarea values from the form data
-    divide_capabilities_prompt = request.form.get('divide_capabilities_prompt')
-    # check_naming_of_capabilities_prompt = request.form.get('check_naming_of_capabilities_prompt')
-    # aggregate_same_topic_prompt = request.form.get('aggregate_same_topic_prompt')
-
-
-    print(f"Instructions 1#: {divide_capabilities_prompt}")
-    # print(f"Instructions 2#: {check_naming_of_capabilities_prompt}")
-    # print(f"Instructions 3#: {aggregate_same_topic_prompt}")
-
     # Use the textarea values instead of config values
-    if instructions == config.create_capability_map_prompt: 
-        base_message.append({"role": "assistant", "content": utils.clean_text(divide_capabilities_prompt)})
-        # base_message.append({"role": "assistant", "content": utils.clean_text(check_naming_of_capabilities_prompt)})
-        # base_message.append({"role": "assistant", "content": utils.clean_text(aggregate_same_topic_prompt)})
+    if instructions == "create capability map":
+        base_message = []
+        base_message.append({"role": "system", "content": "Take the role as an expert enterprise architect"})
+        base_message.append({"role": "user", "content": "Here are the capabilities:" + input})
+        base_message.append({"role": "user", "content": "please translate the capabilities into english"})
+        base_message.append({"role": "user", "content": utils.clean_text(config.apply_filter_referenced_capabilities_prompt)})        
+        base_message.append({"role": "user", "content": utils.clean_text(config.add_capabilities_to_most_relevant_capabilities_prompt)})
+        base_message.append({"role": "user", "content": utils.clean_text(config.create_capability_map_prompt)})
         response_format = {"type": "json_object"}
 
     # Handle unknown instructions

@@ -3,7 +3,7 @@ import utils
 UPLOAD_FOLDER = 'uploads'
 EXTRACTED_TEXT_FOLDER = 'extracted_text'
 CAPABILITY_TEXT_FOLDER = 'capabilities/'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'csv'}
 OPENAI_MODEL = "gpt-3.5-turbo-1106"
 
 
@@ -18,53 +18,63 @@ level_2_capabilities = ', '.join(level_2_capabilities)
 
 extract_capabilities_from_text_chunk_prompt = f"""
     Take the role as an expert enterprise architect.
-    You will be provided a text where you need to identify business capabilities.
-    Focus on identifying business capabilities that are most critical to the operations of the business. 
-    These should reflect the core business areas or main categories of capabilities.
+    You will be provided a text where you need to identify the most critical business architecture capabilities.
+    Take the following capabilities as a reference:  {level_1_capabilities}
     Make sure that the capabilities are translated into english
     Provide the extracted capabilities in a clear, bullet-point format and return only the capabilities without context.
-    If no capabilities can be found, then return nothing.
-
+    If no capabilities can be identified, then return nothing.
     Text: <inserted text>
 """
 
+apply_filter_referenced_capabilities_prompt = f"""
+    Now go through all the chat responses above and list the 18 most relevant capabilities broken into 3 tiers of 6 capabilities each
+    Note that tiers mean the following: Tier 1 = Strategic Capabilities, Tier 2 = Operational Capabilities, Tier 3 = Supporting Capabilities
+"""
 
+add_capabilities_to_most_relevant_capabilities_prompt = f"""
+    Now go through all the relevant capabilities and create a set of level 2 for each capability.
+    Please be aware that the tier level is determined by the capability from which it is derived.
+"""
 
 create_capability_map_prompt = f"""
     As an expert enterprise architect, your task is to analyze the listed business capabilities. 
-    These capabilities should be structured into a JSON format, reflecting a hierarchical capability map based on the LeanIX reference model. 
-    Here are the specific guidelines:
-
-    Focus on identifying business capabilities that are most critical to the operations of the business. 
-    Structure the Hierarchy:
-
-    Level 1 Capabilities: These should represent the core business areas or main categories. Examples are {level_1_capabilities}
-    Level 2 Capabilities: These are more specific capabilities that detail the main categories. Examples are {level_2_capabilities}
-    Avoid Overlapping Capabilities: Ensure that the capabilities identified do not overlap and each capability is distinct and clearly defined.
-
-    Make sure that the same theme or area of capabilities can be found under the same root.
+    These capabilities should be structured into a JSON format, reflecting a hierarchical capability map. 
 
     Create a JSON Structure: Structure the extracted capabilities into a JSON format as shown below. Ensure the JSON syntax is correct and there are no errors.
-
+    Example:
     {{
     "capabilities": [
         {{
-        "name": "Customer Management",
+        "name": "Brand Management",
         "level": "1",
+        "tier": 1,
         "subCapabilities": [
             {{
-            "name": "Customer Definition",
-            "level": "2"
+            "name": "Brand Definition",
+            "level": "2",
+            "tier": 1,
+            }},
+            {{
+            "name": "Brand Portfolio Management",
+            "level": "2",
+            "tier": 1
             }}
         ]
         }}
         {{
-        "name": "Product Management",
+        "name": "Customer Management",
         "level": "1",
+        "tier": 2,
         "subCapabilities": [
             {{
-            "name": "Product Development",
+            "name": "Customer Definition",
             "level": "2",
+            "tier": 2,
+            }},
+            {{
+            "name": "Customer Matching",
+            "level": "2",
+            "tier": 2,
             }}
         ]
         }}
@@ -72,37 +82,3 @@ create_capability_map_prompt = f"""
     }}
     Return just the JSON message
     """
-
-divide_capabilities_prompt=f"""Evaluate the following capability map and adjust the capability Map as neccessary.
-If a capability covers multiple topics, try to divide it so that one capability covers only one topic
-    Example: 
-        Booking process and fleet management - Divide it into "Booking process management" and "Fleet management"
-Return just the JSON message
-
-Capability Map: <insert capability map>
-"""
-
-check_naming_of_capabilities_prompt = f"""Evaluate the following capability map and adjust the capability Map as neccessary.
-    Here are the rules:
-
-    Make sure the naming of the capabilities have this structure like this: <Topic> <Definition of area>
-    Examples: 
-        {level_1_capabilities}
-
-    Return just the JSON message
-
-    Capability Map: <insert capability map>
-    """
-
-aggregate_same_topic_prompt = f"""Evaluate the following capability map and adjust the capability Map as neccessary.
-    Here are the rules:
-    Make sure that the same theme or area of capabilities can be found under the same root.
-
-    Return just the JSON message
-
-    Capability Map: <insert capability map>
-"""
-
-
-instruction_prompt = f"""Try to improve the capability map
-"""
