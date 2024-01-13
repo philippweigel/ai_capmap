@@ -1,12 +1,5 @@
 import utils
 
-UPLOAD_FOLDER = 'uploads'
-EXTRACTED_TEXT_FOLDER = 'extracted_text'
-CAPABILITY_TEXT_FOLDER = 'capabilities/'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'csv'}
-OPENAI_MODEL = "gpt-3.5-turbo-1106"
-
-
 ####PROMPT CONFIGS
 
 level_1_capabilities = utils.get_capabilities_from_sample_data_as_reference(tier = 1, level = 1)
@@ -16,27 +9,29 @@ level_2_capabilities = utils.get_capabilities_from_sample_data_as_reference(tier
 level_1_capabilities = ', '.join(level_1_capabilities)
 level_2_capabilities = ', '.join(level_2_capabilities)
 
-extract_capabilities_from_text_chunk_prompt = f"""
+extract_capabilities_from_text_chunk = f"""
     Take the role as an expert enterprise architect.
     You will be provided a text where you need to identify the most critical business architecture capabilities.
-    Take the following capabilities as a reference:  {level_1_capabilities}
+    Take the following capabilities as a reference:  {level_1_capabilities} {level_2_capabilities}
     Make sure that the capabilities are translated into english
     Provide the extracted capabilities in a clear, bullet-point format and return only the capabilities without context.
     If no capabilities can be identified, then return nothing.
     Text: <inserted text>
 """
 
-apply_filter_referenced_capabilities_prompt = f"""
-    Now go through all the chat responses above and list the 18 most relevant capabilities broken into 3 tiers of 6 capabilities each
+apply_filter_referenced_capabilities= f"""
+    Now go through all the chat responses above
     Note that tiers mean the following: Tier 1 = Strategic Capabilities, Tier 2 = Operational Capabilities, Tier 3 = Supporting Capabilities
 """
 
-add_capabilities_to_most_relevant_capabilities_prompt = f"""
-    Now go through all the relevant capabilities and create a set of level 2 for each capability.
+add_capabilities_to_most_relevant_capabilities= f"""
+    Now go through all the relevant capabilities and create level 2 capabilities for each capability
+    Here are the level 2 capabilities you should take as a reference: {level_2_capabilities}
     Please be aware that the tier level is determined by the capability from which it is derived.
+    Make sure that the level 2 capabilities do not have the same name as the level 1 capability
 """
 
-create_capability_map_prompt = f"""
+create_capability_map = f"""
     As an expert enterprise architect, your task is to analyze the listed business capabilities. 
     These capabilities should be structured into a JSON format, reflecting a hierarchical capability map. 
 

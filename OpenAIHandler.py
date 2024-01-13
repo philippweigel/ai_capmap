@@ -1,8 +1,9 @@
-import config
+import prompts
 import openai
 import utils
+import constants
 
-model = config.OPENAI_MODEL
+model = constants.OPENAI_MODEL
 
 def send_prompt(instructions, input):
     # Define the base message structure
@@ -19,10 +20,22 @@ def send_prompt(instructions, input):
         base_message.append({"role": "system", "content": "Take the role as an expert enterprise architect"})
         base_message.append({"role": "user", "content": "Here are the capabilities:" + input})
         base_message.append({"role": "user", "content": "please translate the capabilities into english"})
-        base_message.append({"role": "user", "content": utils.clean_text(config.apply_filter_referenced_capabilities_prompt)})        
-        base_message.append({"role": "user", "content": utils.clean_text(config.add_capabilities_to_most_relevant_capabilities_prompt)})
-        base_message.append({"role": "user", "content": utils.clean_text(config.create_capability_map_prompt)})
+        base_message.append({"role": "user", "content": utils.clean_text(prompts.apply_filter_referenced_capabilities)})        
+        base_message.append({"role": "user", "content": utils.clean_text(prompts.add_capabilities_to_most_relevant_capabilities)})
+        base_message.append({"role": "user", "content": utils.clean_text(prompts.create_capability_map)})
         response_format = {"type": "json_object"}
+
+    # 
+    if instructions == "check_text_grammar_and_spelling":
+        base_message = []
+        base_message.append({"role": "system", "content": "Be a helpful assistant"})
+        base_message.append({"role": "user", "content": f"""
+                             Please review the text for grammar and spelling errors and provide the corrected version with all 
+                             grammar and spelling issues resolved. When reviewing the text, do not return a translated text. 
+                             Here is:""" + input})
+        response_format = {"type": "text"}
+
+        
 
     # Handle unknown instructions
     if not base_message:
