@@ -7,6 +7,23 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const form = event.target;
+  const files = form.querySelector('input[type="file"]').files;
+
+  // Check the number of files
+  if (files.length > 3) {
+    alert("You can only upload a maximum of 3 files.");
+    return;
+  }
+
+  // Check the size of each file
+  for (let i = 0; i < files.length; i++) {
+    if (files[i].size > 5242880) {
+      // 5 MB in bytes
+      alert("Each file must be no larger than 5 MB.");
+      return;
+    }
+  }
+
   const formData = new FormData(form);
 
   toggleElementDisplay("loading", true);

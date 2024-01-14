@@ -48,12 +48,23 @@ def upload_file():
     if not files:
         logging.warning("No files uploaded in the request.")
         return jsonify({'error': 'No files uploaded'}), 400
+    
 
+    # Check the number of files
+    if len(files) > 3:
+        return jsonify({'error': 'Maximum of 3 files can be uploaded'}), 400
 
     for file in files:
         if file.filename == '':
             logging.warning("File upload attempted with no file selected.")
             return jsonify({'error': 'No selected file'}), 400
+        
+        if file and not utils.allowed_file(file.filename, constants.ALLOWED_EXTENSIONS):
+            return jsonify({'error': 'File type not allowed'}), 400
+        
+        if file and file.content_length > 5242880:  # 5 MB in bytes
+            return jsonify({'error': 'File size exceeds limit'}), 400
+        
         if file and utils.allowed_file(file.filename, constants.ALLOWED_EXTENSIONS):
             # Generate a timestamp format like '2023_01_01_12_00_00'
             timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')

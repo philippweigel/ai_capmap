@@ -22,6 +22,7 @@ def send_prompt(instructions, input):
         base_message.append({"role": "user", "content": "please translate the capabilities into english"})
         base_message.append({"role": "user", "content": utils.clean_text(prompts.apply_filter_referenced_capabilities)})        
         base_message.append({"role": "user", "content": utils.clean_text(prompts.add_capabilities_to_most_relevant_capabilities)})
+        #base_message.append({"role": "user", "content": utils.clean_text(prompts.add_source_to_capabilites)})
         base_message.append({"role": "user", "content": utils.clean_text(prompts.create_capability_map)})
         response_format = {"type": "json_object"}
 

@@ -31,6 +31,10 @@ add_capabilities_to_most_relevant_capabilities= f"""
     Make sure that the level 2 capabilities do not have the same name as the level 1 capability
 """
 
+add_source_to_capabilites=f"""
+Now add the source to each capability from the input
+"""
+
 create_capability_map = f"""
     As an expert enterprise architect, your task is to analyze the listed business capabilities. 
     These capabilities should be structured into a JSON format, reflecting a hierarchical capability map. 
@@ -43,16 +47,19 @@ create_capability_map = f"""
         "name": "Brand Management",
         "level": "1",
         "tier": 1,
+        "source": "",
         "subCapabilities": [
             {{
             "name": "Brand Definition",
             "level": "2",
             "tier": 1,
+            "source": ""
             }},
             {{
             "name": "Brand Portfolio Management",
             "level": "2",
-            "tier": 1
+            "tier": 1,
+            "source": ""
             }}
         ]
         }}
@@ -60,16 +67,19 @@ create_capability_map = f"""
         "name": "Customer Management",
         "level": "1",
         "tier": 2,
+        "source": "",
         "subCapabilities": [
             {{
             "name": "Customer Definition",
             "level": "2",
             "tier": 2,
+            "source": ""
             }},
             {{
             "name": "Customer Matching",
             "level": "2",
             "tier": 2,
+            "source": ""
             }}
         ]
         }}

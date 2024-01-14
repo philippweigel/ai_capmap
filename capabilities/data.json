@@ -1,326 +1,58 @@
 {
     "capabilities": [
         {
-            "name": "Brand Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Brand Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Portfolio Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Performance Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Loyalty Determination",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Awareness Determination",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Targeting",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Brand Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Business Entity Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Business Entity Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Structuring",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Capital Structure Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Performance Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Business Entity Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Campaign Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Campaign Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Design",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Response Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Cost-Benefit Determination",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Portfolio Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Performance Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Campaign Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Geographic Space Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Geographic Space Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Border Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Cadaster Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Portfolio Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Geographic Space Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Intellectual Property Rights Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Intellectual Property Rights Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Intellectual Property Rights Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Intellectual Property Rights Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Intellectual Property Rights Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Intellectual Property Rights Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Investment Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Investment Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Investment Valuation",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Investment Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Investment Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Investment Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Investment Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
             "name": "Market Management",
             "level": "1",
             "tier": 1,
+            "source": "",
             "subCapabilities": [
                 {
                     "name": "Market Definition",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Segmentation",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Forecasting",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Targeting",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Access Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Risk Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Matching",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Market Information Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 }
             ]
         },
@@ -328,135 +60,37 @@
             "name": "Plan Management",
             "level": "1",
             "tier": 1,
+            "source": "",
             "subCapabilities": [
                 {
                     "name": "Plan Definition",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Plan Development",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Plan Verification",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Plan Compliance Management",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Plan Risk Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Plan Access Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Plan Matching",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Plan Information Management",
                     "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Policy Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Policy Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Interpretation",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Compliance Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Formalization",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Policy Information Management",
-                    "level": "2",
-                    "tier": 1
-                }
-            ]
-        },
-        {
-            "name": "Research Management",
-            "level": "1",
-            "tier": 1,
-            "subCapabilities": [
-                {
-                    "name": "Research Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Result Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Dissemination",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Risk Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Access Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Matching",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Research Information Management",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 }
             ]
         },
@@ -464,51 +98,75 @@
             "name": "Strategy Management",
             "level": "1",
             "tier": 1,
+            "source": "",
             "subCapabilities": [
                 {
                     "name": "Strategy Definition",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Vision Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Goal Definition",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Objective Management",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Action Item Management",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Strategy Risk Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Strategy Access Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Strategy Matching",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
                 },
                 {
                     "name": "Strategy Information Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Research Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Research Definition",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Research Risk Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Research Access Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Research Matching",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Research Information Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
                 }
             ]
         }
