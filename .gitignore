@@ -166,3 +166,6 @@ cython_debug/
 capabilities/
 extracted_text/
 uploads/
+
+
+test.py

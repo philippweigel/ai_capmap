@@ -1,55 +1,19 @@
 {
     "capabilities": [
         {
-            "name": "Market Management",
+            "name": "Data Management",
             "level": "1",
             "tier": 1,
             "source": "",
             "subCapabilities": [
                 {
-                    "name": "Market Definition",
+                    "name": "Data Exchange",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Market Segmentation",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Forecasting",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Targeting",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Access Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Risk Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Matching",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Market Information Management",
+                    "name": "Data Quality Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
@@ -57,37 +21,19 @@
             ]
         },
         {
-            "name": "Plan Management",
+            "name": "Technology Infrastructure Management",
             "level": "1",
             "tier": 1,
             "source": "",
             "subCapabilities": [
                 {
-                    "name": "Plan Definition",
+                    "name": "Network Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Plan Risk Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Plan Access Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Plan Matching",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Plan Information Management",
+                    "name": "Infrastructure Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
@@ -95,37 +41,19 @@
             ]
         },
         {
-            "name": "Strategy Management",
+            "name": "Use Case Management",
             "level": "1",
             "tier": 1,
             "source": "",
             "subCapabilities": [
                 {
-                    "name": "Strategy Definition",
+                    "name": "Use Case Chain Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Strategy Risk Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Strategy Access Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Strategy Matching",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Strategy Information Management",
+                    "name": "Use Case Chain Identification",
                     "level": "2",
                     "tier": 1,
                     "source": ""
@@ -133,37 +61,259 @@
             ]
         },
         {
-            "name": "Research Management",
+            "name": "Investment Management",
             "level": "1",
             "tier": 1,
             "source": "",
             "subCapabilities": [
                 {
-                    "name": "Research Definition",
+                    "name": "Investment Definition",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Research Risk Management",
+                    "name": "Investment Valuation",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Coordination Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Governance Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Research Access Management",
+                    "name": "Leadership and People Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Technology Solution Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Solution Design",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Research Matching",
+                    "name": "Platform Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Enterprise-wide System-of-Systems Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "System-of-Systems Management",
                     "level": "2",
                     "tier": 1,
                     "source": ""
                 },
                 {
-                    "name": "Research Information Management",
+                    "name": "System Architecture Design",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Roadmap Development",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Roadmap Planning",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Roadmap Execution",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Sensor Installation Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Sensor Deployment",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Sensor Maintenance",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Asset Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Fleet Definition",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Fleet Lifecycle Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Congestion Information Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Traffic Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Congestion Analysis",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Customer Journey Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Journey Planning",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Journey Experience Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Matrix Organization Creation",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Organizational Structure Design",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Organizational Alignment",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Organizational Commitment Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Commitment Planning",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Commitment Execution",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Governance Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Policy Development",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Regulatory Compliance",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                }
+            ]
+        },
+        {
+            "name": "Leadership and People Management",
+            "level": "1",
+            "tier": 1,
+            "source": "",
+            "subCapabilities": [
+                {
+                    "name": "Talent Management",
+                    "level": "2",
+                    "tier": 1,
+                    "source": ""
+                },
+                {
+                    "name": "Leadership Development",
                     "level": "2",
                     "tier": 1,
                     "source": ""

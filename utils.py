@@ -108,6 +108,20 @@ def delete_files_in_folder(folder_path):
 
 
 
+def get_capabilities_from_sample_data_as_reference_by_level(level):
+    file_path = 'data/RefCapMapTrans.xlsx'
+    capability_mapping = get_capability_mapping()
+
+    # Read the Excel file
+    df = pd.read_excel(file_path,skiprows=1)
+
+    # Replace values in the "Capability" column based on the provided capability_mapping
+    df['Capability'] = df['Capability'].apply(lambda x: replace_substrings(x, capability_mapping))
+
+    filtered_df = df[(df['Level'] == level)]
+
+    return filtered_df["Capability"].values
+
 def get_capabilities_from_sample_data_as_reference(tier, level):
     file_path = 'data/RefCapMapTrans.xlsx'
 
@@ -134,6 +148,21 @@ def convert_json_to_csv(json_data, csv_file_path):
 
 
 
+def get_capability_mapping():
+    file_path = 'data/capabilitymapping.xlsx'
+
+    # Read the Excel file
+    df = pd.read_excel(file_path)
+
+    capability_mapping = {row['Term']: row['Mapped term'] for _, row in df.iterrows()}
+
+    return capability_mapping
+
+
+def replace_substrings(s, mapping):
+    for key, value in mapping.items():
+        s = s.replace(key, value)
+    return s
 
 
 
