@@ -3,6 +3,22 @@ document
   .getElementById("uploadForm")
   .addEventListener("submit", handleFormSubmit);
 
+document.addEventListener("DOMContentLoaded", function () {
+  const fileInput = document.getElementById("document");
+  if (fileInput) {
+    fileInput.addEventListener(
+      "change",
+      function () {
+        console.log("Files changed:", fileInput.files); // Debugging line
+        displayFileNames();
+      },
+      false
+    );
+  } else {
+    console.log("File input not found."); // Debugging line
+  }
+});
+
 function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -78,5 +94,20 @@ function toggleTextareaDisplay() {
   } else {
     textareaContainer.style.maxHeight = textareaContainer.scrollHeight + "px";
     icon.classList.remove("collapsed");
+  }
+}
+
+function displayFileNames() {
+  const fileInput = document.getElementById("document");
+  const fileNamesDiv = document.getElementById("fileNames");
+
+  if (fileInput.files.length > 0) {
+    fileNamesDiv.innerHTML =
+      "Selected files: " +
+      Array.from(fileInput.files)
+        .map((file) => file.name)
+        .join(", ");
+  } else {
+    fileNamesDiv.innerHTML = "";
   }
 }

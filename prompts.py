@@ -53,19 +53,16 @@ create_capability_map = f"""
         "name": "Brand Management",
         "level": "1",
         "tier": 1,
-        "source": "",
         "subCapabilities": [
             {{
             "name": "Brand Definition",
             "level": "2",
             "tier": 1,
-            "source": ""
             }},
             {{
             "name": "Brand Portfolio Management",
             "level": "2",
             "tier": 1,
-            "source": ""
             }}
         ]
         }}
@@ -73,19 +70,16 @@ create_capability_map = f"""
         "name": "Customer Management",
         "level": "1",
         "tier": 2,
-        "source": "",
         "subCapabilities": [
             {{
             "name": "Customer Definition",
             "level": "2",
             "tier": 2,
-            "source": ""
             }},
             {{
             "name": "Customer Matching",
             "level": "2",
             "tier": 2,
-            "source": ""
             }}
         ]
         }}

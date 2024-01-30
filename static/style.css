@@ -64,3 +64,35 @@ footer {
     transform: rotate(360deg);
   }
 }
+.custom-file-button {
+  input[type="file"] {
+    margin-left: -2px !important;
+
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+    &::file-selector-button {
+      display: none;
+    }
+  }
+
+  &:hover {
+    label {
+      cursor: pointer;
+    }
+  }
+}
+
+.button-label {
+  cursor: pointer;
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #6c757d; /* Matching border color */
+  padding: 6px 12px; /* Adjust padding as needed */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block;
+}
+
+.button-label:hover {
+  background-color: #343a40; /* Change the background color on hover */
+}

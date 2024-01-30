@@ -14,18 +14,18 @@
   <body>
     <nav class="container-fluid">
       <ul>
-        <li><strong>CapMap</strong></li>
+        <li><img src="{{ url_for('static', filename='capmap-logo-transparent.png') }}" alt="CapMap Logo"  width="40" height="40" /></li>
+        <li><img src="{{ url_for('static', filename='finius-logo.png') }}" alt="CapMap Logo" width="60" height="60"/></li>
       </ul>
     </nav>
     <main class="container">
       <div class="grid">
         <section>
           <hgroup>
-            <h2>Upload Your Documents</h2>
-            <h3>Instantly Generate a Capability Map</h3>
+            <h2><strong>Generate a Capability Map</strong></h2>
           </hgroup>
           <p>
-            Upload your PDF documents to automatically generate a capability
+            Upload your documents to automatically generate a capability
             map. Our system analyzes the text and constructs a visual
             representation of the capabilities or themes within the documents.
           </p>
@@ -33,15 +33,13 @@
             Max files: 3<br>
             Max size: 5mb
           </p>
-          <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="document" name="document" accept=".pdf, .doc, .docx, .xls, .xlsx, .csv" multiple required />
+          <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data" class="input-group custom-file-button">
+            <label class="input-group-text button-label" for="document">Choose documents</label>
+            <input class="form-control" type="file" id="document" name="document" accept=".pdf, .doc, .docx, .xls, .xlsx, .csv" multiple required style="display:none;"/>
+            <div id="fileNames"></div>
             <button type="submit">Upload</button>
         </form>
 
-
-
-
-          
         
         <div id="loading" style="display: none;">
           <div class="loader"></div>
@@ -57,7 +55,7 @@
       <small>
         <a href="#">Privacy Policy</a> •
         <a href="#">Terms of Service</a> •
-        Version: 1.1 <!-- Add the version number here -->
+        Version: 1.2 <!-- Add the version number here -->
       </small>
     </footer>
 

@@ -1,322 +1,254 @@
 {
     "capabilities": [
         {
-            "name": "Data Management",
+            "name": "Organisation Management",
+            "description": "Management of organizational structure, performance, and risk",
             "level": "1",
             "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
-                    "name": "Data Exchange",
+                    "name": "Organisation Definition",
+                    "description": "Defining the structure and purpose of the organization",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Data Quality Management",
+                    "name": "Organisation Structuring",
+                    "description": "Structuring the organization for efficient operations",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
+                },
+                {
+                    "name": "Organisation Capital Structure Management",
+                    "description": "Managing the financial structure of the organization",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Organisation Performance Management",
+                    "description": "Monitoring and improving organizational performance",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Organisation Risk Management",
+                    "description": "Identifying and mitigating organizational risks",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Organisation Access Management",
+                    "description": "Managing access and permissions within the organization",
+                    "level": "2",
+                    "tier": 1
                 }
             ]
         },
         {
-            "name": "Technology Infrastructure Management",
+            "name": "Traffic Area Management",
+            "description": "Management of traffic areas and associated risks",
             "level": "1",
             "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
-                    "name": "Network Management",
+                    "name": "Traffic Area Definition",
+                    "description": "Defining and categorizing traffic areas",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Infrastructure Management",
+                    "name": "Traffic Area Risk Management",
+                    "description": "Identifying and mitigating risks in traffic areas",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
+                },
+                {
+                    "name": "Traffic Area Access Management",
+                    "description": "Managing access and permissions within traffic areas",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Traffic Area Portfolio Management",
+                    "description": "Managing and optimizing the portfolio of traffic areas",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Traffic Area Matching",
+                    "description": "Matching traffic areas with appropriate resources",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Traffic Area Information Management",
+                    "description": "Managing and organizing information related to traffic areas",
+                    "level": "2",
+                    "tier": 1
                 }
             ]
         },
         {
-            "name": "Use Case Management",
+            "name": "Fleet Management",
+            "description": "Management of fleet operations and performance",
             "level": "1",
             "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Use Case Chain Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Use Case Chain Identification",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Investment Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Investment Definition",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Investment Valuation",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Coordination Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Governance Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Leadership and People Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Technology Solution Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Solution Design",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Platform Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Enterprise-wide System-of-Systems Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "System-of-Systems Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "System Architecture Design",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Roadmap Development",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Roadmap Planning",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Roadmap Execution",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Sensor Installation Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Sensor Deployment",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                },
-                {
-                    "name": "Sensor Maintenance",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Asset Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
                     "name": "Fleet Definition",
+                    "description": "Defining the composition and purpose of the fleet",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Fleet Lifecycle Management",
+                    "name": "Fleet Risk Management",
+                    "description": "Identifying and mitigating risks associated with the fleet",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
+                },
+                {
+                    "name": "Fleet Access Management",
+                    "description": "Managing access and permissions within the fleet",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Fleet Performance Management",
+                    "description": "Monitoring and optimizing fleet performance",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Fleet Inventory Management",
+                    "description": "Managing and tracking the inventory of fleet resources",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Fleet Matching",
+                    "description": "Matching fleet resources with operational needs",
+                    "level": "2",
+                    "tier": 1
                 }
             ]
         },
         {
-            "name": "Congestion Information Management",
+            "name": "Demand Modeling",
+            "description": "Modeling and analyzing transportation demand",
             "level": "1",
             "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
-                    "name": "Traffic Management",
+                    "name": "Agent-based Traffic Demand Modeling",
+                    "description": "Modeling traffic demand using agent-based techniques",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Congestion Analysis",
+                    "name": "Mobility of 4 million people",
+                    "description": "Analyzing the mobility patterns of a large population",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
+                },
+                {
+                    "name": "Socio-demographic and spatial conditions",
+                    "description": "Incorporating socio-demographic and spatial factors into demand modeling",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Minute-level modeling of all trips in Hamburg",
+                    "description": "Modeling transportation trips at a minute-level granularity in Hamburg",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Modeling of transportation modes, trip purposes, start and end points",
+                    "description": "Modeling various transportation modes, trip purposes, and trip endpoints",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Evaluation of the impact of changing conditions",
+                    "description": "Assessing the impact of changing conditions on transportation demand",
+                    "level": "2",
+                    "tier": 1
                 }
             ]
         },
         {
-            "name": "Customer Journey Management",
+            "name": "Ridepooling Management",
+            "description": "Management of ridepooling services and resources",
             "level": "1",
             "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
-                    "name": "Journey Planning",
+                    "name": "Ridepooling Performance Management",
+                    "description": "Monitoring and optimizing ridepooling service performance",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Journey Experience Management",
+                    "name": "Ridepooling Access Management",
+                    "description": "Managing access and permissions within ridepooling services",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
+                },
+                {
+                    "name": "Ridepooling Risk Management",
+                    "description": "Identifying and mitigating risks associated with ridepooling services",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Ridepooling Matching",
+                    "description": "Matching ridepooling resources with user demand",
+                    "level": "2",
+                    "tier": 1
+                },
+                {
+                    "name": "Ridepooling Information Management",
+                    "description": "Managing and organizing information related to ridepooling services",
+                    "level": "2",
+                    "tier": 1
                 }
             ]
         },
         {
-            "name": "Matrix Organization Creation",
+            "name": "Public Transport Management",
+            "description": "Management of public transportation services and infrastructure",
             "level": "1",
             "tier": 1,
-            "source": "",
             "subCapabilities": [
                 {
-                    "name": "Organizational Structure Design",
+                    "name": "Taxi Management",
+                    "description": "Managing taxi services within the public transportation system",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Organizational Alignment",
+                    "name": "Mobility Service Management",
+                    "description": "Managing mobility services to enhance public transportation",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Organizational Commitment Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Commitment Planning",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Commitment Execution",
+                    "name": "Traffic System Management",
+                    "description": "Managing the traffic system to support public transportation",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Governance Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Policy Development",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Regulatory Compliance",
+                    "name": "Urban Mobility Planning",
+                    "description": "Planning and optimizing urban mobility services",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
-                }
-            ]
-        },
-        {
-            "name": "Leadership and People Management",
-            "level": "1",
-            "tier": 1,
-            "source": "",
-            "subCapabilities": [
-                {
-                    "name": "Talent Management",
-                    "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 },
                 {
-                    "name": "Leadership Development",
+                    "name": "Sustainable Transport System Planning",
+                    "description": "Planning and promoting sustainable transportation systems",
                     "level": "2",
-                    "tier": 1,
-                    "source": ""
+                    "tier": 1
                 }
             ]
         }

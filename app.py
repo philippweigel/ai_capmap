@@ -175,7 +175,10 @@ def upload_file():
 
     capability_map = OpenAIHandler.send_prompt("create capability map", all_capabilities_text)
 
-    utils.save_as_json_file(capability_map, constants.CAPABILITY_TEXT_FOLDER)
+    #Add description to each capability
+    capability_map_with_description = OpenAIHandler.send_prompt("add description", capability_map)
+
+    utils.save_as_json_file(capability_map_with_description, constants.CAPABILITY_TEXT_FOLDER)
 
     return jsonify({'message': 'Files successfully uploaded'}), 200
     

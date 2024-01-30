@@ -25,15 +25,14 @@ def send_prompt(instructions, input):
         base_message.append({"role": "user", "content": utils.clean_text(prompts.create_capability_map)})
         response_format = {"type": "json_object"}
 
-    # 
-    # if instructions == "check_text_grammar_and_spelling":
-    #     base_message = []
-    #     base_message.append({"role": "system", "content": "Be a helpful assistant"})
-    #     base_message.append({"role": "user", "content": f"""
-    #                          Please review the text for grammar and spelling errors and provide the corrected version with all 
-    #                          grammar and spelling issues resolved. When reviewing the text, do not return a translated text. 
-    #                          Here is:""" + input})
-    #     response_format = {"type": "text"}
+    
+    if instructions == "add description":
+        base_message = []
+        base_message.append({"role": "system", "content": "Be a helpful assistant"})
+        base_message.append({"role": "user", "content": f"""
+                             Please enhance the JSON file by introducing a new 'description' field for each element, containing a brief one-sentence description of the corresponding capability.""" + input})
+        base_message.append({"role": "user", "content": "Make sure that the json output doesnt contain any json syntax error"})
+        response_format = {"type": "json_object"}
 
         
     # Handle unknown instructions
