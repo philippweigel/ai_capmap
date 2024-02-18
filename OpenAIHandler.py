@@ -14,7 +14,6 @@ def send_prompt(instructions, input):
 
     response_format = { "type": "text" }
 
-    # Use the textarea values instead of config values
     if instructions == "create capability map":
         base_message = []
         base_message.append({"role": "system", "content": "Take the role as an expert enterprise architect"})

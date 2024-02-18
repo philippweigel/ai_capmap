@@ -5,9 +5,6 @@ import utils
 level_1_capabilities = utils.get_capabilities_from_sample_data_as_reference_by_level(level = 1)
 level_2_capabilities = utils.get_capabilities_from_sample_data_as_reference_by_level(level = 2)
 
-#level_1_capabilities = utils.get_capabilities_from_sample_data_as_reference(tier = 1, level = 1)
-#level_2_capabilities = utils.get_capabilities_from_sample_data_as_reference(tier = 1, level = 2)
-
 # Format capabilities into a string
 level_1_capabilities = ', '.join(level_1_capabilities)
 level_2_capabilities = ', '.join(level_2_capabilities)

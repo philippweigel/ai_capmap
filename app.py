@@ -21,11 +21,9 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 
 # Configure logging
-#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filename='logs/mylogfile.log')
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Ensure necessary directories exist
-#for folder in [constants.UPLOAD_FOLDER, constants.EXTRACTED_TEXT_FOLDER, constants.CAPABILITY_TEXT_FOLDER, constants.LOG_FOLDER]:
 for folder in [constants.UPLOAD_FOLDER, constants.EXTRACTED_TEXT_FOLDER, constants.CAPABILITY_TEXT_FOLDER]:
     os.makedirs(folder, exist_ok=True)
 
@@ -140,15 +138,6 @@ def upload_file():
 
 
     logging.info("Processing text chunks for capability extraction.")
-
-    # for chunk in text_chunks:
-    #     try:
-    #         ##corrected_text = OpenAIHandler.send_prompt("check_text_grammar_and_spelling", chunk)
-    #         capability = OpenAIHandler.send_prompt(extract_capabilities_from_text_chunk, chunk)
-    #         if capability:
-    #             capabilities.append(capability)
-    #     except Exception as e:
-    #         logging.error(f"Error processing chunk: {e}")
 
     for chunk in text_chunks:
         combined_capability = []

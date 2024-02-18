@@ -1,254 +1,204 @@
 {
     "capabilities": [
         {
-            "name": "Organisation Management",
-            "description": "Management of organizational structure, performance, and risk",
+            "name": "Data Protection Management",
             "level": "1",
             "tier": 1,
+            "description": "Managing and ensuring the protection of data in compliance with regulations.",
             "subCapabilities": [
                 {
-                    "name": "Organisation Definition",
-                    "description": "Defining the structure and purpose of the organization",
+                    "name": "Data Privacy Rights",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Protecting individuals' rights to control their personal data."
                 },
                 {
-                    "name": "Organisation Structuring",
-                    "description": "Structuring the organization for efficient operations",
+                    "name": "Data Exchange and Collaboration",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Facilitating secure data exchange and collaboration."
                 },
                 {
-                    "name": "Organisation Capital Structure Management",
-                    "description": "Managing the financial structure of the organization",
+                    "name": "Data Processing Compliance Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Managing data processing activities in compliance with regulations."
                 },
                 {
-                    "name": "Organisation Performance Management",
-                    "description": "Monitoring and improving organizational performance",
+                    "name": "Data Security Management",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Organisation Risk Management",
-                    "description": "Identifying and mitigating organizational risks",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Organisation Access Management",
-                    "description": "Managing access and permissions within the organization",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Ensuring the security and integrity of data."
                 }
             ]
         },
         {
-            "name": "Traffic Area Management",
-            "description": "Management of traffic areas and associated risks",
+            "name": "Personal Data Processing",
             "level": "1",
             "tier": 1,
+            "description": "Processing personal data for specific purposes in compliance with regulations.",
             "subCapabilities": [
                 {
-                    "name": "Traffic Area Definition",
-                    "description": "Defining and categorizing traffic areas",
+                    "name": "Data Processing for Public Interest",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Processing personal data for the public interest in compliance with regulations."
                 },
                 {
-                    "name": "Traffic Area Risk Management",
-                    "description": "Identifying and mitigating risks in traffic areas",
+                    "name": "Data Processing for Archival, Scientific, or Historical Research Purposes",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Processing personal data for archival, scientific, or historical research purposes."
                 },
                 {
-                    "name": "Traffic Area Access Management",
-                    "description": "Managing access and permissions within traffic areas",
+                    "name": "Data Processing for Statistical Purposes",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Traffic Area Portfolio Management",
-                    "description": "Managing and optimizing the portfolio of traffic areas",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Traffic Area Matching",
-                    "description": "Matching traffic areas with appropriate resources",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Traffic Area Information Management",
-                    "description": "Managing and organizing information related to traffic areas",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Processing personal data for statistical analysis and reporting."
                 }
             ]
         },
         {
-            "name": "Fleet Management",
-            "description": "Management of fleet operations and performance",
+            "name": "Free Data Flow",
             "level": "1",
             "tier": 1,
+            "description": "Facilitating the free flow of data across borders in compliance with regulations.",
             "subCapabilities": [
                 {
-                    "name": "Fleet Definition",
-                    "description": "Defining the composition and purpose of the fleet",
+                    "name": "Cross-Border Data Exchange",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Enabling secure exchange of data across borders."
                 },
                 {
-                    "name": "Fleet Risk Management",
-                    "description": "Identifying and mitigating risks associated with the fleet",
+                    "name": "International Data Transfer Management",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Fleet Access Management",
-                    "description": "Managing access and permissions within the fleet",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Fleet Performance Management",
-                    "description": "Monitoring and optimizing fleet performance",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Fleet Inventory Management",
-                    "description": "Managing and tracking the inventory of fleet resources",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Fleet Matching",
-                    "description": "Matching fleet resources with operational needs",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Managing the transfer of data across international borders in compliance with regulations."
                 }
             ]
         },
         {
-            "name": "Demand Modeling",
-            "description": "Modeling and analyzing transportation demand",
+            "name": "Harmonization of Data Protection Regulations",
             "level": "1",
             "tier": 1,
+            "description": "Ensuring consistency and compliance with data protection regulations.",
             "subCapabilities": [
                 {
-                    "name": "Agent-based Traffic Demand Modeling",
-                    "description": "Modeling traffic demand using agent-based techniques",
+                    "name": "Compliance Management",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Managing and ensuring compliance with data protection regulations."
                 },
                 {
-                    "name": "Mobility of 4 million people",
-                    "description": "Analyzing the mobility patterns of a large population",
+                    "name": "Legal Proceeding Management",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Socio-demographic and spatial conditions",
-                    "description": "Incorporating socio-demographic and spatial factors into demand modeling",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Minute-level modeling of all trips in Hamburg",
-                    "description": "Modeling transportation trips at a minute-level granularity in Hamburg",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Modeling of transportation modes, trip purposes, start and end points",
-                    "description": "Modeling various transportation modes, trip purposes, and trip endpoints",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Evaluation of the impact of changing conditions",
-                    "description": "Assessing the impact of changing conditions on transportation demand",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Managing legal proceedings related to data protection."
                 }
             ]
         },
         {
-            "name": "Ridepooling Management",
-            "description": "Management of ridepooling services and resources",
+            "name": "Protection of Personal Data Rights",
             "level": "1",
             "tier": 1,
+            "description": "Protecting individuals' rights related to their personal data.",
             "subCapabilities": [
                 {
-                    "name": "Ridepooling Performance Management",
-                    "description": "Monitoring and optimizing ridepooling service performance",
+                    "name": "Data Protection Regulation Compliance",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Ensuring compliance with data protection regulations."
                 },
                 {
-                    "name": "Ridepooling Access Management",
-                    "description": "Managing access and permissions within ridepooling services",
+                    "name": "Data Subject Rights Management",
                     "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Ridepooling Risk Management",
-                    "description": "Identifying and mitigating risks associated with ridepooling services",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Ridepooling Matching",
-                    "description": "Matching ridepooling resources with user demand",
-                    "level": "2",
-                    "tier": 1
-                },
-                {
-                    "name": "Ridepooling Information Management",
-                    "description": "Managing and organizing information related to ridepooling services",
-                    "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Managing and ensuring individuals' rights regarding their personal data."
                 }
             ]
         },
         {
-            "name": "Public Transport Management",
-            "description": "Management of public transportation services and infrastructure",
+            "name": "Proportionality Principle in Data Protection",
             "level": "1",
             "tier": 1,
+            "description": "Applying proportionality and necessity measures in data processing.",
             "subCapabilities": [
                 {
-                    "name": "Taxi Management",
-                    "description": "Managing taxi services within the public transportation system",
+                    "name": "Data Processing Proportionality and Necessity Measures",
                     "level": "2",
-                    "tier": 1
-                },
+                    "tier": 2,
+                    "description": "Implementing measures to ensure the proportionality and necessity of data processing."
+                }
+            ]
+        },
+        {
+            "name": "Compliance with Fundamental Rights and Freedoms",
+            "level": "1",
+            "tier": 1,
+            "description": "Ensuring compliance with fundamental rights and freedoms in data processing.",
+            "subCapabilities": [
                 {
-                    "name": "Mobility Service Management",
-                    "description": "Managing mobility services to enhance public transportation",
+                    "name": "Rights and Freedom Protection",
                     "level": "2",
-                    "tier": 1
-                },
+                    "tier": 2,
+                    "description": "Protecting individuals' rights and freedoms in data processing."
+                }
+            ]
+        },
+        {
+            "name": "Cross-Border Data Exchange",
+            "level": "1",
+            "tier": 1,
+            "description": "Facilitating secure exchange of data across international borders.",
+            "subCapabilities": [
                 {
-                    "name": "Traffic System Management",
-                    "description": "Managing the traffic system to support public transportation",
+                    "name": "International Data Transfer Management",
                     "level": "2",
-                    "tier": 1
-                },
+                    "tier": 2,
+                    "description": "Managing the transfer of data across international borders in compliance with regulations."
+                }
+            ]
+        },
+        {
+            "name": "Cooperation and Data Sharing between Public and Private Entities",
+            "level": "1",
+            "tier": 1,
+            "description": "Facilitating cooperation and data sharing between public and private entities.",
+            "subCapabilities": [
                 {
-                    "name": "Urban Mobility Planning",
-                    "description": "Planning and optimizing urban mobility services",
+                    "name": "Cooperation Management",
                     "level": "2",
-                    "tier": 1
-                },
+                    "tier": 2,
+                    "description": "Managing and facilitating cooperation and data sharing between public and private entities."
+                }
+            ]
+        },
+        {
+            "name": "Technological Challenges in Data Protection",
+            "level": "1",
+            "tier": 1,
+            "description": "Addressing technological challenges to ensure data protection.",
+            "subCapabilities": [
                 {
-                    "name": "Sustainable Transport System Planning",
-                    "description": "Planning and promoting sustainable transportation systems",
+                    "name": "Data Security Measures",
                     "level": "2",
-                    "tier": 1
+                    "tier": 2,
+                    "description": "Implementing measures to ensure the security of data."
+                }
+            ]
+        },
+        {
+            "name": "Impact of Technological Developments on Data Protection",
+            "level": "1",
+            "tier": 1,
+            "description": "Managing the impact of technological developments on data protection.",
+            "subCapabilities": [
+                {
+                    "name": "Data Protection Compliance Management",
+                    "level": "2",
+                    "tier": 2,
+                    "description": "Managing compliance with data protection regulations in the context of technological developments."
                 }
             ]
         }
